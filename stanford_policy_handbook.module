@@ -44,7 +44,7 @@ function stanford_policy_handbook_block_view($delta=0) {
     case 'policy_jumpto_block':
 			// Generate our block content
 			$block['subject'] = "";
-			$block['content'] = dor_policies_generate_toc();
+			$block['content'] = stanford_policy_handbook_generate_toc();
       break;
   }
 	// return the built content
