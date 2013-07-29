@@ -18,12 +18,6 @@ function stanford_policy_handbook_block_info() {
 	$blocks = array();
 
 	// Generate listing of blocks from this module, for the admin/block page
-	$blocks['rph_pager'] = array(
-		'info' => t('Pager for  Policies'),
-		'status' => 1,
-		'region' => 'sidebar_first'
-	);
-
 	$blocks['goto_rph'] = array(
 		'info' => t('GoTo Policies Form'),
 		'status' => 1,
@@ -53,11 +47,6 @@ function stanford_policy_handbook_block_view($delta=0) {
 	// set up an empty array which will contain the block contents
 	$block = array();
   switch($delta) {
-    case 'rph_pager':
-      // Generate our block content
-      $block['subject'] = "";
-      $block['content'] = dor_policies_return_pager();
-      break;
     case 'goto_rph':
 			// Generate our block content
 			$block['subject'] = "";
@@ -72,119 +61,6 @@ function stanford_policy_handbook_block_view($delta=0) {
 	// return the built content
 	return $block;
 }
-
-/**
- * @TODO: Document this function
- */
-function stanford_policy_handbook_return_pager() {
-  $content = '';
-  $path = '';
-  $nid = arg(1);
-  $prev_next_array = array();
-
-  if (is_numeric($nid)) {
-    if ($node = node_load($nid)) {
-    
-      if ($node->type == "policy_document") {
-        if (isset($node->field_parent_chapter[$node->language][0]['target_id'])) {
-          $parent_section_nid = $node->field_parent_chapter[$node->language][0]['target_id'];
-
-          $query = db_select('field_data_field_parent_chapter', 'pc');
-          $query->join('field_data_field_policy_number', 'pn', 'pn.entity_id = pc.entity_id');
-          $query->join('node', 'n', 'pn.entity_id = n.nid');
-          $query->fields('pc', array('entity_id', 'field_parent_chapter_target_id'));
-          $query->condition('pc.field_parent_chapter_target_id', $parent_section_nid);
-          $query->condition('n.status', 1);
-          $query->orderBy('pn.field_policy_number_value', 'ASC');
-          $result = $query->execute();
-
-          $prev_next_array = dor_policies_get_prev_next($result, $nid);
-        }
-      }
-      else if ($node->type == "policy_section") {
-      
-      	$parent_book_nid = false;
-      	
-      	if(isset($node->field_policy_book[$node->language][0]['target_id'])){
-					$parent_book_nid = $node->field_policy_book[$node->language][0]['target_id'];
-				}
-      
-        $query = db_select('node', 'n');
-        $query->join('field_data_field_section_number', 'sn', 'sn.entity_id = n.nid');
-        $query->join('field_data_field_policy_book', 'pb', 'pb.entity_id = n.nid');
-        $query->fields('sn', array('entity_id', 'field_section_number_value'));
-        $query->condition('n.status', 1);
-        $query->condition('pb.field_policy_book_target_id', $parent_book_nid);
-        $query->orderBy('sn.field_section_number_value', 'ASC');
-
-        $result = $query->execute();
-        $prev_next_array = dor_policies_get_prev_next($result, $nid);
-      }
-    }
-  }
-
-  if ($prev_next_array) {
-    $content .= '<div class="rph-pager">';
-
-    $prev = $prev_next_array['prev'];
-    $next = $prev_next_array['next'];
-
-    if ($prev) {
-      $path = drupal_lookup_path('alias', "node/". $prev);
-//      $content .= '<a class="prev-button" href="/adminguide-dev/'. $path .'">'. t("Prev") .'</a>';
-      $content .= l(t("Prev"), $path, array('attributes' => array('class' => 'prev-button')));
-    }
-    else {
-      $content .= '<a class="prev-button">'. t("Prev") .'</a>';
-    }
-
-    if ($next) {
-      $path = drupal_lookup_path('alias', "node/". $next);
-//      $content .= '<a class="next-button" href="/adminguide-dev/'. $path .'">'. t("Next") .'</a>';
-      $content .= l(t("Next"), $path, array('attributes' => array('class' => 'next-button')));
-    }
-    else {
-      $content .= '<a class="next-button">'. t("Next") .'</a>';
-    }
-
-    $content .= '</div>'; // .rph-pager
-  }
-
-  return $content;
-}
-
-
-/**
- * Returns Prev/Next markup for Related Policy sidebar
- */
-function stanford_policy_handbook_get_prev_next($result, $nid) {
-	$record_array = array();
-	$prev_nid = false;
-	$next_nid = false;
-	$entity_id = false;
-
-	while ($record = $result->fetchAssoc()) {
-		$record_array[] = $record['entity_id'];
-	}
-
-	for ($i=0; $i < count($record_array); $i++) {
-		$entity_id = $record_array[$i];
-
-		if ($entity_id == $nid){
-
-			if ($i > 0){
-				$prev_nid = $record_array[$i-1];
-			}
-
-			if (isset($record_array[$i+1])) {
-				$next_nid = $record_array[$i+1];
-			}
-		}
-	}
-
-	return array('prev' => $prev_nid, 'next' => $next_nid);
-}
-
 
 /**
  * Returns container markup for RPH Policy/Section selection sidebar
