@@ -178,15 +178,6 @@ function stanford_policy_handbook_generate_toc($field = 'field_policy_subsection
 
 
 /**
- * Helper function to generate HTML IDs from field_topic_title fields.
- *
- * Forces the string to lowercase and replaces spaces with dashes.
- */
-function stanford_policy_handbook_html_id($nid) {
-  return str_replace(' ', '-', strtolower($nid));
-}
-
-/**
  * Implements hook_theme_registry_alter()
 **/
 function stanford_policy_handbook_theme_registry_alter(&$theme_registry) {
