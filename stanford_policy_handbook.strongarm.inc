@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * dor_policies.strongarm.inc
+ * stanford_policy_handbook.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function dor_policies_strongarm() {
+function stanford_policy_handbook_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
