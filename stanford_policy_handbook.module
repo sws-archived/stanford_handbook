@@ -18,12 +18,6 @@ function stanford_policy_handbook_block_info() {
 	$blocks = array();
 
 	// Generate listing of blocks from this module, for the admin/block page
-	$blocks['goto_rph'] = array(
-		'info' => t('GoTo Policies Form'),
-		'status' => 1,
-		'region' => 'sidebar_first'
-	);
-	
 	$blocks['policy_jumpto_block'] = array(
 		'info' => t('Policy Jumpto'),
 		'status' => 1,
@@ -47,11 +41,6 @@ function stanford_policy_handbook_block_view($delta=0) {
 	// set up an empty array which will contain the block contents
 	$block = array();
   switch($delta) {
-    case 'goto_rph':
-			// Generate our block content
-			$block['subject'] = "";
-			$block['content'] = dor_policies_return_goto_rph();
-      break;
     case 'policy_jumpto_block':
 			// Generate our block content
 			$block['subject'] = "";
@@ -61,168 +50,6 @@ function stanford_policy_handbook_block_view($delta=0) {
 	// return the built content
 	return $block;
 }
-
-/**
- * Returns container markup for RPH Policy/Section selection sidebar
- */
-function stanford_policy_handbook_return_goto_rph() {
-  $output = '';
-
-	drupal_add_js(drupal_get_path('module', 'dor_policies') .'/dor_policies.js');
-
-  $policy_info = dor_policies_return_policy_info();
-  
-
-  $book_title = "";
-  $book_abbreviation = "";
-  //this returns an error on pages where we're not in a book - jbickar
-  //dpm($policy_info);
-  $book_node = node_load($policy_info['policy_book_nid']);
-  
-  if($book_node){
-	  $book_title = $book_node->title;
-	  if(isset($book_node->field_book_abbreviation[$book_node->language][0]['safe_value']))
-	  $book_abbreviation =$book_node->field_book_abbreviation[$book_node->language][0]['safe_value'];
-  }
-
-
-
-  $output .= '<div class="goto-rph-container">';
-  $output .= '<h2 class="pane-title">Go to <abbr title="'.$book_title.'">'.$book_abbreviation.'</abbr> Chapter:</h2>';
-  $output .= '<form action="#" method="GET" id="goto-rph-form">';
-
-  $form_results = dor_policies_get_jumpto_options($policy_info['policy_book_nid']);
-
-  $output .= '<div class="goto-rph">';
-
-  $output .= $form_results['sections'];
-  $output .= $form_results['policies'];
-
-  $output .= '</div>';
-  $output .= '<input class="goto-rph-submit" type="submit" name="submit" value="'. t("Go there") .'">';
-  $output .= '</form>';
-  $output .= '</div>';
-
-  return $output;
-}
-
-
-/**
- * @TODO: Document this function
- */
-function stanford_policy_handbook_return_policy_info(){
-	
-	//first get the parent book
-	$nid = arg(1);
-	$policy_book_nid = false;
-	$policy_section_nid = false;
-
-	
-	$node = node_load($nid);
-	if($node){
-		
-		if($node->type == "policy_document"){
-	//change to node_load() - jbickar
-      //dpm($node);
-      if(isset($node->field_parent_chapter['und'][0]['target_id'])){
- 			  $policy_section_nid = $node->field_parent_chapter['und'][0]['target_id'];
- 			  $parent_chapter_node = node_load($policy_section_nid);
- 			  $policy_book_nid = $parent_chapter_node->field_policy_book['und'][0]['target_id'];
- 			}
-
-
-//			if(isset($node->field_parent_chapter[$node->language][0]['entity']->nid)){
-//				$policy_section_nid = $node->field_parent_chapter[$node->language][0]['entity']->nid;
-				
-//				if(isset($node->field_parent_chapter[$node->language][0]['entity']->field_policy_book[$node->field_parent_chapter[$node->language][0]['entity']->language][0]['target_id'])){
-//					$policy_book_nid = $node->field_parent_chapter[$node->language][0]['entity']->field_policy_book[$node->field_parent_chapter[$node->language][0]['entity']->language][0]['target_id'];
-//				}
-//			}
-		}
-		
-		if($node->type == "policy_section"){
-		
-			if(isset($node->nid)){
-				$policy_section_nid = $node->nid;
-				
-		
-				if(isset($node->field_policy_book[$node->language][0]['target_id'])){
-					$policy_book_nid = $node->field_policy_book[$node->language][0]['target_id'];
-				}
-			}
-		}
-		
-	}
-	
-	
-	return array('policy_book_nid'=>$policy_book_nid, 'policy_section_nid'=>$policy_section_nid);
-	
-}
-
-
-/**
- * Returns drop-down markup for RPH Policy/Section selection sidebar
- */
-function stanford_policy_handbook_get_jumpto_options($parent_book_id = null){
-	global $base_url;
-
-	
-	if($parent_book_id){
-	
-	$policies = "<select class=\"rph-policies\" name=\"rph-policies\">";
-	$policies .= "<option value=\"\" selected>".t("Select a Policy")."</option>";
-
-	$sections = "<select class=\"rph-sections\" name=\"rph-sections\">";
-
-	$sections .= "<option value=\"\" selected>".t("Select a Chapter")."</option>";
-
-
-	$query = db_select('node', 'n');
-	$query->join('field_data_field_section_number', 'sn', 'sn.entity_id = n.nid');
-	$query->join('field_data_field_policy_book', 'pb', 'pb.entity_id = n.nid');
-	$query->join('field_data_field_section_number','csn', 'n.vid = csn.revision_id');
-	$query->fields('sn', array('entity_id', 'field_section_number_value'));
-	$query->fields('n', array('title'));
-	$query->condition('n.status', 1);
-	$query->condition('pb.field_policy_book_target_id', $parent_book_id);
-	$query->orderBy('csn.field_section_number_value', 'ASC');
-
-	$result = $query->execute();
-
-	while($record = $result->fetchAssoc()){
-
-		$path = drupal_lookup_path('alias', "node/".$record['entity_id']);
-		$sections .= "<option rel=\"".$record['entity_id']."\" value=\"$base_url/$path\">".$record['field_section_number_value'].". ".$record['title']."</option>";
-
-
-		$query2 = db_select('field_data_field_parent_chapter', 'pc');
-		$query2->join('field_data_field_policy_number', 'pn', 'pn.entity_id = pc.entity_id');
-		$query2->join('node', 'n', 'pn.entity_id = n.nid');
-		$query2->join('field_data_field_policy_number','cpn', 'n.vid = cpn.revision_id');
-		$query2->fields('pn', array('field_policy_number_value'));
-		$query2->fields('pc', array('entity_id', 'field_parent_chapter_target_id'));
-		$query2->fields('n', array('title'));
-		$query2->condition('pc.field_parent_chapter_target_id', $record['entity_id']);
-		$query2->condition('n.status', 1);
-		$query2->orderBy('cpn.field_policy_number_value', 'ASC');
-		$result2 = $query2->execute();
-
-		while($record2 = $result2->fetchAssoc()){
-			$path2 = drupal_lookup_path('alias', "node/".$record2['entity_id']);
-			$policies .= "<option class=\"".$record['entity_id']."\" value=\"$base_url/$path2\">".$record['field_section_number_value'].".".$record2['field_policy_number_value']." ".$record2['title']."</option>";
-		}
-
-	}
-
-	$sections .= "</select>";
-	$policies .= "</select>";
-
-	return array('sections'=>$sections, 'policies'=>$policies);
-	
-	}
-
-}
-
 
 /**
  * Helper function to generate a render array that outputs the 'jump to' ToC
