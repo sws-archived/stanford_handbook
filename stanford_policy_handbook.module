@@ -532,13 +532,3 @@ function stanford_policy_handbook_preprocess_node(&$vars, $hook) {
     );	
   }
 }
-
-/**
- * Implements template_preprocess_search_result().
- * 
- * Processes variables for search-result.tpl.php
- */
-function stanford_policy_handbook_preprocess_search_result(&$variables) {
-// Remove user name and modification date from search results
-   $variables['info'] = '';
-} 
