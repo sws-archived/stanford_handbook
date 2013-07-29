@@ -80,7 +80,7 @@
 ?>
 
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <a name="<?php print "anchor-". $node->nid; ?>"></a>
+  <a id="<?php print "anchor-". $node->nid; ?>"></a>
 
 	<?php print render($title_prefix); ?>
 		<?php if (!$page): ?>
@@ -121,7 +121,7 @@
 
                  $item = $content['field_policy_subsection'][$k]['entity']['field_collection_item'][$v['value']];
                  
-                 print "<a name=\"anchor-". $v['value']."\"></a>";
+                 print "<a id=\"anchor-". $v['value']."\"></a>";
 
                  print "<div class=\"policy-subsection-container policy-subection-container-".$v['value']."\">";
 
