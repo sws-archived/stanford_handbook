@@ -35,11 +35,6 @@ function stanford_policy_handbook_block_info() {
 		'status' => 1,
 		'region' => 'sidebar_first'
 	);
-  $blocks['adminguide_frontpage_search'] = array(
-    'info' => t('Search the Guide'),
-    'status' => 1,
-  );
-
 	// return the built content
 	return $blocks;
 }
@@ -73,22 +68,9 @@ function stanford_policy_handbook_block_view($delta=0) {
 			$block['subject'] = "";
 			$block['content'] = dor_policies_generate_toc();
       break;
-    case 'adminguide_frontpage_search':
-      $block['subject'] = t("Search the Guide");
-      $block['content'] = dor_policies_adminguide_frontpage_search();
-      break;
   }
 	// return the built content
 	return $block;
-}
-
-/**
- * @return Block HTML for front page search block
- */
-function stanford_policy_handbook_adminguide_frontpage_search() {
-  $output = render(drupal_get_form('search_block_form'));
-  $output .= '<p>' . t("Search the Admin Guide by keyword or term.") . '</p>';
-  return $output;
 }
 
 /**
