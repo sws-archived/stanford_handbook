@@ -107,7 +107,7 @@
 	<?php print render($content['field_policy_tags']); ?>
 	
 	<?php
-		$block = module_invoke('dor_policies', 'block_view', 'policy_jumpto_block');
+		$block = module_invoke('stanford_policy_handbook', 'block_view', 'policy_jumpto_block');
 	  print render($block);
 
 
@@ -125,7 +125,7 @@
 
                  print "<div class=\"policy-subsection-container policy-subection-container-".$v['value']."\">";
 
-		                 print '<h2 class="policy-subsection-title" id="'. (isset($item['field_policy_subsection_title']['#items'][0]['value']) ? dor_policies_html_id($item['field_policy_subsection_title']['#items'][0]['value']) : "") .'">';
+		                 print '<h2 class="policy-subsection-title" id="'. (isset($item['field_policy_subsection_title']['#items'][0]['value']) ? stanford_policy_handbook_html_id($item['field_policy_subsection_title']['#items'][0]['value']) : "") .'">';
 		                 print "<span class=\"prefix-container\">";
 		                 
 		                 if(!$hide_formatting){
