@@ -8,7 +8,7 @@ include_once 'stanford_policy_handbook.features.inc';
 
 
 /**
- * Implement hook_block_info()
+ * Implements hook_block_info().
  *
  * Generate HTML for the user_role_summary block
  * @returns block HTML
@@ -20,8 +20,7 @@ function stanford_policy_handbook_block_info() {
 	// Generate listing of blocks from this module, for the admin/block page
 	$blocks['policy_jumpto_block'] = array(
 		'info' => t('Policy Jumpto'),
-		'status' => 1,
-		'region' => 'sidebar_first'
+		'status' => 0,
 	);
 	// return the built content
 	return $blocks;
@@ -29,7 +28,7 @@ function stanford_policy_handbook_block_info() {
 
 
 /**
- * Implement hook_block_view()
+ * Implements hook_block_view().
  *
  * Generate HTML for the user_role_summary block
  * @param op the operation from the URL
@@ -188,7 +187,7 @@ function stanford_policy_handbook_html_id($nid) {
 
 /**
  * Implements hook_theme_registry_alter()
-**/
+ */
 function stanford_policy_handbook_theme_registry_alter(&$theme_registry) {
   $mod_path = drupal_get_path('module', 'stanford_policy_handbook');
   $theme_registry_copy = $theme_registry;       // munge on a copy
@@ -202,7 +201,7 @@ function stanford_policy_handbook_theme_registry_alter(&$theme_registry) {
 
 /**
  * Helper function for re-ordering arrays (needed by theme_registry_alter)
-*/
+ */
 function _stanford_policy_handbook_insert_after_first_element(&$a, $element) {
   if(is_array($a)) {
     $first_element = array_shift($a);
@@ -210,7 +209,11 @@ function _stanford_policy_handbook_insert_after_first_element(&$a, $element) {
   }
 }
 
-
+/**
+ * Implements template_preprocess_node().
+ * @param type $vars
+ * @param type $hook
+ */
 function stanford_policy_handbook_preprocess_node(&$vars, $hook) {
 	if($vars['type'] == 'policy_book') {
 		$vars['section_view'] = views_embed_view('dor_policy_section_listing','block_1');
