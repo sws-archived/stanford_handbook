@@ -1201,7 +1201,7 @@ function stanford_handbook_field_default_fields() {
             'type' => 'property',
           ),
           'target_bundles' => array(
-            'policy_subchapter' => 'policy_subchapter',
+            'subchapter' => 'subchapter',
           ),
         ),
         'target_type' => 'node',
