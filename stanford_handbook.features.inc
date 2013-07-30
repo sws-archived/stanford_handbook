@@ -34,6 +34,14 @@ function stanford_handbook_views_api() {
  */
 function stanford_handbook_node_info() {
   $items = array(
+    'chapter' => array(
+      'name' => t('Chapter'),
+      'base' => 'node_content',
+      'description' => t('A Chapter is a collection of subchapters and handbook pages.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'handbook' => array(
       'name' => t('Handbook'),
       'base' => 'node_content',
@@ -46,14 +54,6 @@ function stanford_handbook_node_info() {
       'name' => t('Policy Document'),
       'base' => 'node_content',
       'description' => t('A <b>Policy Document</b> is an individual unit of policy within a Policy Chapter.'),
-      'has_title' => '1',
-      'title_label' => t('Title'),
-      'help' => '',
-    ),
-    'policy_section' => array(
-      'name' => t('Policy Chapter'),
-      'base' => 'node_content',
-      'description' => t('A <b>Policy Chapter</b> is a group of Policy Documents within a Policy Manual.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
