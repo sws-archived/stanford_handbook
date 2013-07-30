@@ -1,5 +1,5 @@
-name = Policies
-description = Provides functionality and content residing within the Policies section.
+name = Stanford Handbook
+description = Provides a turnkey solution for creating handbooks (e.g., policy handbooks, etc.)
 core = 7.x
 package = Stanford
 php = 5.2.4
