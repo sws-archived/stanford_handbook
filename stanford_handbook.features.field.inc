@@ -758,26 +758,13 @@ function stanford_handbook_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_chapter_number',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
       'locked' => '0',
-      'module' => 'text',
-      'settings' => array(
-        'max_length' => '10',
-      ),
+      'module' => 'number',
+      'settings' => array(),
       'translatable' => '0',
-      'type' => 'text',
+      'type' => 'number_integer',
     ),
     'field_instance' => array(
       'bundle' => 'chapter',
@@ -803,17 +790,17 @@ function stanford_handbook_field_default_fields() {
       'label' => 'Chapter Number',
       'required' => 1,
       'settings' => array(
-        'custom_add_another' => '',
-        'text_processing' => '0',
+        'max' => '9',
+        'min' => '1',
+        'prefix' => '',
+        'suffix' => '',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
-        'active' => 1,
-        'module' => 'text',
-        'settings' => array(
-          'size' => '10',
-        ),
-        'type' => 'text_textfield',
+        'active' => 0,
+        'module' => 'number',
+        'settings' => array(),
+        'type' => 'number',
         'weight' => '4',
       ),
     ),
