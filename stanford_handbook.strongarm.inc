@@ -13,7 +13,7 @@ function stanford_handbook_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_node__policy_book';
+  $strongarm->name = 'field_bundle_settings_node__handbook';
   $strongarm->value = array(
     'view_modes' => array(
       'teaser' => array(
@@ -41,7 +41,7 @@ function stanford_handbook_strongarm() {
       'display' => array(),
     ),
   );
-  $export['field_bundle_settings_node__policy_book'] = $strongarm;
+  $export['field_bundle_settings_node__handbook'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -124,11 +124,11 @@ function stanford_handbook_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_options_policy_book';
+  $strongarm->name = 'menu_options_handbook';
   $strongarm->value = array(
     0 => 'main-menu',
   );
-  $export['menu_options_policy_book'] = $strongarm;
+  $export['menu_options_handbook'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -151,9 +151,9 @@ function stanford_handbook_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_parent_policy_book';
+  $strongarm->name = 'menu_parent_handbook';
   $strongarm->value = 'main-menu:0';
-  $export['menu_parent_policy_book'] = $strongarm;
+  $export['menu_parent_handbook'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -172,10 +172,10 @@ function stanford_handbook_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_options_policy_book';
+  $strongarm->name = 'node_options_handbook';
   $strongarm->value = array(
     0 => 'status',
-    1 => 'promote',
+    1 => 'revision',
   );
   $export['node_options_policy_book'] = $strongarm;
 
@@ -223,7 +223,7 @@ function stanford_handbook_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_policy_book';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_policy_book'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -243,9 +243,9 @@ function stanford_handbook_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_policy_book_pattern';
-  $strongarm->value = 'policies/[node:title]';
-  $export['pathauto_node_policy_book_pattern'] = $strongarm;
+  $strongarm->name = 'pathauto_node_handbook_pattern';
+  $strongarm->value = 'handbooks/[node:title]';
+  $export['pathauto_node_handbook_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

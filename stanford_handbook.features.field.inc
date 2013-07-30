@@ -500,8 +500,8 @@ function stanford_handbook_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-policy_book-body'.
-  $fields['node-policy_book-body'] = array(
+  // Exported field: 'node-handbook-body'.
+  $fields['node-handbook-body'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -530,7 +530,7 @@ function stanford_handbook_field_default_fields() {
       'type' => 'text_with_summary',
     ),
     'field_instance' => array(
-      'bundle' => 'policy_book',
+      'bundle' => 'handbook',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -570,75 +570,6 @@ function stanford_handbook_field_default_fields() {
         ),
         'type' => 'text_textarea_with_summary',
         'weight' => '31',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-policy_book-field_book_abbreviation'.
-  $fields['node-policy_book-field_book_abbreviation'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_book_abbreviation',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'text',
-      'settings' => array(
-        'max_length' => '255',
-      ),
-      'translatable' => '0',
-      'type' => 'text',
-    ),
-    'field_instance' => array(
-      'bundle' => 'policy_book',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '1',
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_book_abbreviation',
-      'label' => 'Book Abbreviation',
-      'required' => 1,
-      'settings' => array(
-        'custom_add_another' => '',
-        'text_processing' => '0',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'text',
-        'settings' => array(
-          'size' => '60',
-        ),
-        'type' => 'text_textfield',
-        'weight' => '33',
       ),
     ),
   );
@@ -1470,7 +1401,7 @@ $entity_field[0][\'value\'] = intval($val2);',
             'type' => 'none',
           ),
           'target_bundles' => array(
-            'policy_book' => 'policy_book',
+            'handbook' => 'handbook',
           ),
         ),
         'handler_submit' => 'Change handler',

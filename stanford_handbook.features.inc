@@ -34,10 +34,10 @@ function stanford_handbook_views_api() {
  */
 function stanford_handbook_node_info() {
   $items = array(
-    'policy_book' => array(
-      'name' => t('Policy Book'),
+    'handbook' => array(
+      'name' => t('Handbook'),
       'base' => 'node_content',
-      'description' => t('Policy Book information and main category (like RPH)'),
+      'description' => t('A Handbook is a parent collection of information, and may include chapters, subchapters, and/or pages.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
