@@ -1610,6 +1610,308 @@ $entity_field[0][\'value\'] = intval($val2);',
     ),
   );
 
+  // Exported field: 'node-subchapter-body'.
+  $fields['node-subchapter-body'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(
+        0 => 'node',
+      ),
+      'field_name' => 'body',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_with_summary',
+    ),
+    'field_instance' => array(
+      'bundle' => 'subchapter',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '0',
+        ),
+        'teaser' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(
+            'trim_length' => 600,
+          ),
+          'type' => 'text_summary_or_trimmed',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'body',
+      'label' => 'Subchapter Summary',
+      'required' => FALSE,
+      'settings' => array(
+        'display_summary' => TRUE,
+        'text_processing' => 1,
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'text',
+        'settings' => array(
+          'rows' => 20,
+          'summary_rows' => 5,
+        ),
+        'type' => 'text_textarea_with_summary',
+        'weight' => '5',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-subchapter-field_parent_chapter'.
+  $fields['node-subchapter-field_parent_chapter'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_parent_chapter',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'direction' => 'ASC',
+            'property' => 'title',
+            'type' => 'property',
+          ),
+          'target_bundles' => array(
+            'chapter' => 'chapter',
+          ),
+        ),
+        'handler_submit' => 'Change handler',
+        'target_type' => 'node',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'subchapter',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '1',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_parent_chapter',
+      'label' => 'Parent Chapter',
+      'required' => FALSE,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
+        'weight' => '2',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-subchapter-field_subchapter_number'.
+  $fields['node-subchapter-field_subchapter_number'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_subchapter_number',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'number',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'number_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'subchapter',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '3',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_subchapter_number',
+      'label' => 'Subchapter Number',
+      'required' => 0,
+      'settings' => array(
+        'max' => '9',
+        'min' => '1',
+        'prefix' => '',
+        'suffix' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'number',
+        'settings' => array(),
+        'type' => 'number',
+        'weight' => '3',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-subchapter-field_subchapter_name'.
+  $fields['node-subchapter-field_subchapter_name'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_subchapter_name',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'subchapter',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '4',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_subchapter_name',
+      'label' => 'Subchapter Title',
+      'required' => 1,
+      'settings' => array(
+        'better_formats' => array(
+          'allowed_formats' => array(
+            'content_editor_text_format' => 'content_editor_text_format',
+            'ds_code' => 'ds_code',
+            'filtered_html' => 'filtered_html',
+            'full_html' => 'full_html',
+            'plain_text' => 'plain_text',
+          ),
+          'allowed_formats_toggle' => 0,
+          'default_order_toggle' => 0,
+          'default_order_wrapper' => array(
+            'formats' => array(
+              'content_editor_text_format' => array(
+                'weight' => '-10',
+              ),
+              'ds_code' => array(
+                'weight' => '12',
+              ),
+              'filtered_html' => array(
+                'weight' => '0',
+              ),
+              'full_html' => array(
+                'weight' => '1',
+              ),
+              'plain_text' => array(
+                'weight' => '10',
+              ),
+            ),
+          ),
+        ),
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '1',
+      ),
+    ),
+  );
+
+
   
   return $fields;
 }

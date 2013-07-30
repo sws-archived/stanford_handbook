@@ -58,6 +58,14 @@ function stanford_handbook_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'subchapter' => array(
+      'name' => t('Subchapter'),
+      'base' => 'node_content',
+      'description' => t('A Subchapter is a grouping of Handbook Pages within a Chapter.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
   );
   return $items;
 }
