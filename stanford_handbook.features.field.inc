@@ -2183,6 +2183,35 @@ function stanford_handbook_field_default_fields() {
     ),
   );
 
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Applicability');
+  t('Attachments');
+  t('Authority');
+  t('Body');
+  t('Category(ies)');
+  t('Chapter Number');
+  t('Chapter Summary');
+  t('Chapter Title');
+  t('Current version');
+  t('Enter the title of the Chapter');
+  t('Footnote(s)');
+  t('Hide Bullet Formatting');
+  t('Image');
+  t('Original issue date');
+  t('Parent Chapter');
+  t('Parent Handbook');
+  t('Parent Subchapter');
+  t('Policy Number');
+  t('Policy subsection');
+  t('Related Policies');
+  t('Subchapter Number');
+  t('Subchapter Summary');
+  t('Subchapter Title');
+  t('Subsection body');
+  t('Subsection title');
+  t('Suppress Jump-to links');
+  t('Title');
 
   
   return $fields;
