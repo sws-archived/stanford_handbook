@@ -53,7 +53,7 @@ function stanford_handbook_block_view($delta=0) {
 /**
  * Helper function to generate a render array that outputs the 'jump to' ToC
  */
-function stanford_handbook_generate_toc($field = 'field_policy_subsection', $f_title = 'field_policy_subsection_title') {
+function stanford_handbook_generate_toc($field = 'field_hbp_subsection', $f_title = 'field_hbp_subsection_title') {
 
 	$nid = arg(1);
 	$node = false;
@@ -63,8 +63,8 @@ function stanford_handbook_generate_toc($field = 'field_policy_subsection', $f_t
 	if(is_numeric($nid)){
 		$node = node_load($nid);
 
-    if(isset($node->field_hide_bullet_formatting[$node->language][0]['value'])){
-			if($node->field_hide_bullet_formatting[$node->language][0]['value']){
+    if(isset($node->field_hbp_hide_bullet_formatting[$node->language][0]['value'])){
+			if($node->field_hbp_hide_bullet_formatting[$node->language][0]['value']){
 				$hide_formatting = true;
 				}
 			}
@@ -82,8 +82,8 @@ function stanford_handbook_generate_toc($field = 'field_policy_subsection', $f_t
   
   // If node has a value for field_suppress_jump_to_template, we suppress the toc
   $supress = 0;
-  if (isset($node->field_suppress_jump_to_template[LANGUAGE_NONE])) {
-    foreach ($node->field_suppress_jump_to_template[LANGUAGE_NONE] as $index => $entity){
+  if (isset($node->field_hbp_suppress_jump_to[LANGUAGE_NONE])) {
+    foreach ($node->field_hbp_suppress_jump_to[LANGUAGE_NONE] as $index => $entity){
       if (is_array($entity)) {
         $supress = array_pop($entity);
       }
@@ -215,20 +215,20 @@ function _stanford_handbook_insert_after_first_element(&$a, $element) {
  * @param type $hook
  */
 function stanford_handbook_preprocess_node(&$vars, $hook) {
-	if($vars['type'] == 'policy_book') {
+	if($vars['type'] == 'handbook') {
 		$vars['section_view'] = views_embed_view('dor_policy_section_listing','block_1');
 		
 	}
-	if($vars['type'] == 'policy_section') {
+	if($vars['type'] == 'chapter') {
 		$vars['title'] = '1' . $vars['title'];
 		$vars['document_view'] = views_embed_view('dor_policy_document_listing','block_2');
 	}
 
 	// Check formatting conditions
-	if ($vars['type'] == 'policy_document') {		
+	if ($vars['type'] == 'handbook_page') {		
 		$vars['hide_formatting'] = false;
-		if(isset($vars['field_hide_bullet_formatting'][$vars['language']][0]['value'])){
-			if($vars['field_hide_bullet_formatting'][$vars['language']][0]['value']){
+		if(isset($vars['field_hbp_hide_bullet_formatting'][$vars['language']][0]['value'])){
+			if($vars['field_hbp_hide_bullet_formatting'][$vars['language']][0]['value']){
 				$vars['hide_formatting'] = true;
 			}
 		}

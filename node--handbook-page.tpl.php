@@ -90,54 +90,54 @@
 	
 	<div class="content" <?php print $content_attributes; ?>>
 	<div class="field-last-updated-on-prefix">Last updated on:</div>
-    <?php print render($content['field_policy_current_version']); ?>
-	<?php print render($content['field_policy_former_number']); ?>
+    <?php print render($content['field_hbp_current_version']); ?>
+	<?php print render($content['field_hbp_former_number']); ?>
 
 	<?php print render($content['body']); ?>
 
-	<?php print render($content['field_policy_authority']); ?>
-	<?php print render($content['field_policy_applicability']); ?>
-	<?php print render($content['field_policy_responsibility']); ?>
-	<?php print render($content['field_policy_statement']); ?>
-	<?php print render($content['field_policy_purpose']); ?>
-	<?php print render($content['field_policy_guide_supervisors']); ?>
-	<?php print render($content['field_policy_attachments']); ?>
-	<?php print render($content['field_policy_related']); ?>
+	<?php print render($content['field_hbp_authority']); ?>
+	<?php print render($content['field_hbp_applicability']); ?>
+	<?php print render($content['field_hbp_responsibility']); ?>
+	<?php print render($content['field_hbp_statement']); ?>
+	<?php print render($content['field_hbp_purpose']); ?>
+	<?php print render($content['field_hbp_guide_supervisors']); ?>
+	<?php print render($content['field_hbp_attachments']); ?>
+	<?php print render($content['field_hbp_related']); ?>
 	<?php print render($content['field_auth_cont']); ?>
-	<?php print render($content['field_policy_tags']); ?>
+	<?php print render($content['field_hbp_categories']); ?>
 	
 	<?php
-		$block = module_invoke('stanford_policy_handbook', 'block_view', 'policy_jumpto_block');
+		$block = module_invoke('stanford_handbook', 'block_view', 'policy_jumpto_block');
 	  print render($block);
 
 
 			$alphabet = range('a','z');
 
- 			 if (isset($content['field_policy_subsection']['#items'])) {
+ 			 if (isset($content['field_hbp_subsection']['#items'])) {
 
  			 		 $subsection_i = 1;
 
-           foreach ($content['field_policy_subsection']['#items'] as $k => $v) {                    
+           foreach ($content['field_hbp_subsection']['#items'] as $k => $v) {                    
 
-                 $item = $content['field_policy_subsection'][$k]['entity']['field_collection_item'][$v['value']];
+                 $item = $content['field_hbp_subsection'][$k]['entity']['field_collection_item'][$v['value']];
                  
                  print "<a id=\"anchor-". $v['value']."\"></a>";
 
                  print "<div class=\"policy-subsection-container policy-subection-container-".$v['value']."\">";
 
-		                 print '<h2 class="policy-subsection-title" id="'. (isset($item['field_policy_subsection_title']['#items'][0]['value']) ? stanford_policy_handbook_html_id($item['field_policy_subsection_title']['#items'][0]['value']) : "") .'">';
+		                 print '<h2 class="policy-subsection-title" id="'. (isset($item['field_hbp_subsection_title']['#items'][0]['value']) ? stanford_handbook_html_id($item['field_hbp_subsection_title']['#items'][0]['value']) : "") .'">';
 		                 print "<span class=\"prefix-container\">";
 		                 
 		                 if(!$hide_formatting){
 		                 	print $subsection_i.". ";
 		                 }
 		                 
-		                 print "</span>". (isset($item['field_policy_subsection_title']['#items'][0]['value']) ? $item['field_policy_subsection_title']['#items'][0]['value'] : "");
+		                 print "</span>". (isset($item['field_hbp_subsection_title']['#items'][0]['value']) ? $item['field_hbp_subsection_title']['#items'][0]['value'] : "");
 		                 print "</h2>";
 
-                    if (isset($item['field_policy_subsection_body'])) {
+                    if (isset($item['field_hbp_subsection_body'])) {
 		                 print "<div class=\"policy-subsection-body\">";
-		                 print $item['field_policy_subsection_body']['#items'][0]['value'];
+		                 print $item['field_hbp_subsection_body']['#items'][0]['value'];
 		                 print "</div>";
 		               
 		                }
@@ -145,7 +145,7 @@
                  $subsection_child_i = 65;
 
                
-                if (isset($item['field_policy_subsection_body'])) {
+                if (isset($item['field_hbp_subsection_body'])) {
                  print '<p class="back-to-top"><a href="#main-content">Back to top</a></p>';
                 }
                
@@ -156,7 +156,7 @@
         }
 
         ?>
-  	<?php print render($content['field_policy_footnote']); ?>
+  	<?php print render($content['field_hbp_footnote']); ?>
 
 		<?php print render($content['links']); ?><?php print render($content['comments']); ?>
 
