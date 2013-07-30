@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * stanford_policy_handbook.features.inc
+ * stanford_handbook.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function stanford_policy_handbook_ctools_plugin_api() {
+function stanford_handbook_ctools_plugin_api() {
   list($module, $api) = func_get_args();
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
@@ -25,14 +25,14 @@ function stanford_policy_handbook_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function stanford_policy_handbook_views_api() {
+function stanford_handbook_views_api() {
   return array("version" => "3.0");
 }
 
 /**
  * Implements hook_node_info().
  */
-function stanford_policy_handbook_node_info() {
+function stanford_handbook_node_info() {
   $items = array(
     'policy_book' => array(
       'name' => t('Policy Book'),

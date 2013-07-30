@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * stanford_policy_handbook.views_default.inc
+ * stanford_handbook.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function stanford_policy_handbook_views_default_views() {
+function stanford_handbook_views_default_views() {
   $export = array();
 
   $view = new view;

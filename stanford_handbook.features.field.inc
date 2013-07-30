@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * stanford_policy_handbook.features.field.inc
+ * stanford_handbook.features.field.inc
  */
 
 /**
  * Implements hook_field_default_fields().
  */
-function stanford_policy_handbook_field_default_fields() {
+function stanford_handbook_field_default_fields() {
   $fields = array();
 
   // Exported field: 'field_collection_item-field_policy_grandchildren-field_granchild_title'.

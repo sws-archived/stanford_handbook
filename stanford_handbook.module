@@ -4,7 +4,7 @@
  * Code for the Policies feature.
  */
 
-include_once 'stanford_policy_handbook.features.inc';
+include_once 'stanford_handbook.features.inc';
 
 
 /**
@@ -13,7 +13,7 @@ include_once 'stanford_policy_handbook.features.inc';
  * Generate HTML for the user_role_summary block
  * @returns block HTML
  */
-function stanford_policy_handbook_block_info() {
+function stanford_handbook_block_info() {
 	// set up an empty array which will contain the block contents
 	$blocks = array();
 
@@ -35,7 +35,7 @@ function stanford_policy_handbook_block_info() {
  * @param delta offset
  * @returns block HTML
  */
-function stanford_policy_handbook_block_view($delta=0) {
+function stanford_handbook_block_view($delta=0) {
 
 	// set up an empty array which will contain the block contents
 	$block = array();
@@ -43,7 +43,7 @@ function stanford_policy_handbook_block_view($delta=0) {
     case 'policy_jumpto_block':
 			// Generate our block content
 			$block['subject'] = "";
-			$block['content'] = stanford_policy_handbook_generate_toc();
+			$block['content'] = stanford_handbook_generate_toc();
       break;
   }
 	// return the built content
@@ -53,7 +53,7 @@ function stanford_policy_handbook_block_view($delta=0) {
 /**
  * Helper function to generate a render array that outputs the 'jump to' ToC
  */
-function stanford_policy_handbook_generate_toc($field = 'field_policy_subsection', $f_title = 'field_policy_subsection_title') {
+function stanford_handbook_generate_toc($field = 'field_policy_subsection', $f_title = 'field_policy_subsection_title') {
 
 	$nid = arg(1);
 	$node = false;
@@ -181,28 +181,28 @@ function stanford_policy_handbook_generate_toc($field = 'field_policy_subsection
  *
  * Forces the string to lowercase and replaces spaces with dashes.
  */
-function stanford_policy_handbook_html_id($nid) {
+function stanford_handbook_html_id($nid) {
   return str_replace(' ', '-', strtolower($nid));
 }
 
 /**
  * Implements hook_theme_registry_alter()
  */
-function stanford_policy_handbook_theme_registry_alter(&$theme_registry) {
-  $mod_path = drupal_get_path('module', 'stanford_policy_handbook');
+function stanford_handbook_theme_registry_alter(&$theme_registry) {
+  $mod_path = drupal_get_path('module', 'stanford_handbook');
   $theme_registry_copy = $theme_registry;       // munge on a copy
   _theme_process_registry($theme_registry_copy, 'phptemplate', 'theme_engine', 'pow', $mod_path);
   $theme_registry += array_diff_key($theme_registry_copy, $theme_registry);
   $hooks = array('node');
   foreach ($hooks as $h) {
-    _stanford_policy_handbook_insert_after_first_element($theme_registry[$h]['theme paths'], $mod_path);
+    _stanford_handbook_insert_after_first_element($theme_registry[$h]['theme paths'], $mod_path);
   }
 }
 
 /**
  * Helper function for re-ordering arrays (needed by theme_registry_alter)
  */
-function _stanford_policy_handbook_insert_after_first_element(&$a, $element) {
+function _stanford_handbook_insert_after_first_element(&$a, $element) {
   if(is_array($a)) {
     $first_element = array_shift($a);
     array_unshift($a, $first_element, $element);
@@ -214,7 +214,7 @@ function _stanford_policy_handbook_insert_after_first_element(&$a, $element) {
  * @param type $vars
  * @param type $hook
  */
-function stanford_policy_handbook_preprocess_node(&$vars, $hook) {
+function stanford_handbook_preprocess_node(&$vars, $hook) {
 	if($vars['type'] == 'policy_book') {
 		$vars['section_view'] = views_embed_view('dor_policy_section_listing','block_1');
 		

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * dor_policies.field_group.inc
+ * stanford_handbook.field_group.inc
  */
 
 /**
  * Implements hook_field_group_info().
  */
-function stanford_policy_handbook_field_group_info() {
+function stanford_handbook_field_group_info() {
   $export = array();
 
   $field_group = new stdClass();
