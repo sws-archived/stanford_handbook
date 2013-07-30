@@ -34,6 +34,27 @@ function stanford_handbook_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'ant_pattern_handbook_page';
+  $strongarm->value = '[node:field-hb-page-title]';
+  $export['ant_pattern_handbook_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_php_handbook_page';
+  $strongarm->value = 0;
+  $export['ant_php_handbook_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_handbook_page';
+  $strongarm->value = '1';
+  $export['ant_handbook_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'ant_pattern_subchapter';
   $strongarm->value = '[node:field-policy-subchapter-number]. [node:field-policy-subchapter-name]';
   $export['ant_pattern_subchapter'] = $strongarm;

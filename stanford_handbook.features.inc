@@ -50,10 +50,10 @@ function stanford_handbook_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
-    'policy_document' => array(
-      'name' => t('Policy Document'),
+    'handbook_page' => array(
+      'name' => t('Handbook Page'),
       'base' => 'node_content',
-      'description' => t('A <b>Policy Document</b> is an individual unit of policy within a Policy Chapter.'),
+      'description' => t('A Handbook Page is an individual unit within a Handbook. It can have a parent subchapter and a parent chapter.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

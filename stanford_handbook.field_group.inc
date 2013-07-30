@@ -13,140 +13,65 @@ function stanford_handbook_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_policy_content|node|policy_document|form';
-  $field_group->group_name = 'group_policy_content';
+  $field_group->identifier = 'group_hbp_content|node|handbook_page|form';
+  $field_group->group_name = 'group_hbp_content';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'policy_document';
+  $field_group->bundle = 'handbook_page';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Policy Content',
-    'weight' => '2',
-    'children' => array(
-      0 => 'body',
-      1 => 'field_policy_subsection',
-      2 => 'field_suppress_jump_to_template',
-    ),
-    'format_type' => 'fieldset',
-    'format_settings' => array(
-      'label' => 'Policy Content',
-      'instance_settings' => array(
-        'required_fields' => 1,
-        'classes' => '',
-        'description' => '',
-      ),
-      'formatter' => 'collapsed',
-    ),
-  );
-  $export['group_policy_content|node|policy_document|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_policy_essential|node|policy_document|form';
-  $field_group->group_name = 'group_policy_essential';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'policy_document';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Essential Policy Document Info',
-    'weight' => '0',
-    'children' => array(
-      0 => 'field_parent_chapter',
-      1 => 'field_policy_number',
-      2 => 'title',
-    ),
-    'format_type' => 'fieldset',
-    'format_settings' => array(
-      'label' => 'Essential Policy Document Info',
-      'instance_settings' => array(
-        'required_fields' => 1,
-        'classes' => '',
-        'description' => '',
-      ),
-      'formatter' => 'open',
-    ),
-  );
-  $export['group_policy_essential|node|policy_document|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_policy_metadata|node|policy_document|form';
-  $field_group->group_name = 'group_policy_metadata';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'policy_document';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Policy Metadata',
-    'weight' => '3',
-    'children' => array(
-      0 => 'field_policy_current_version',
-      1 => 'field_policy_original_issue',
-    ),
-    'format_type' => 'fieldset',
-    'format_settings' => array(
-      'label' => 'Policy Metadata',
-      'instance_settings' => array(
-        'required_fields' => 1,
-        'classes' => '',
-        'description' => '',
-      ),
-      'formatter' => 'collapsed',
-    ),
-  );
-  $export['group_policy_metadata|node|policy_document|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_section_content|node|policy_section|form';
-  $field_group->group_name = 'group_section_content';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'policy_section';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Section Content',
+    'label' => 'Content',
     'weight' => '1',
     'children' => array(
       0 => 'body',
+      1 => 'field_hbp_subsection',
+      2 => 'field_hbp_suppress_jump_to',
+      3 => 'field_hbp_authority',
+      4 => 'field_hbp_applicability',
+      5 => 'field_hbp_responsibility',
+      6 => 'field_hbp_statement',
+      7 => 'field_hbp_purpose',
+      8 => 'field_hbp_guide_supervisors',
+      9 => 'field_hbp_footnote',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'label' => 'Section Content',
+      'label' => 'Content',
       'instance_settings' => array(
         'required_fields' => 1,
         'classes' => '',
         'description' => '',
       ),
-      'formatter' => 'collapsed',
+      'formatter' => 'collapsible',
     ),
   );
-  $export['group_section_content|node|policy_section|form'] = $field_group;
+  $export['group_hbp_content|node|handbook_page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_section_essential|node|policy_section|form';
-  $field_group->group_name = 'group_section_essential';
+  $field_group->identifier = 'group_hbp_essential|node|handbook_page|form';
+  $field_group->group_name = 'group_hbp_essential';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'policy_section';
+  $field_group->bundle = 'handbook_page';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Essential Policy Section Info',
+    'label' => 'Essential Info',
     'weight' => '0',
     'children' => array(
-      0 => 'field_section_number',
-      1 => 'field_policy_book',
-      2 => 'title',
+      0 => 'field_hbp_title',
+      1 => 'field_hbp_parent_subchapter',
+      2 => 'field_parent_chapter',
+      3 => 'field_hbp_number',
+      4 => 'field_hbp_former_number',
+      5 => 'field_hbp_chapter',
+      6 => 'field_hbp_subchapter',
+      7 => 'title',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'label' => 'Essential Policy Section Info',
+      'label' => 'Essential Info',
       'instance_settings' => array(
         'required_fields' => 1,
         'classes' => '',
@@ -155,7 +80,65 @@ function stanford_handbook_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_section_essential|node|policy_section|form'] = $field_group;
+  $export['group_hbp_essential|node|handbook_page|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_hbp_metadata|node|handbook_page|form';
+  $field_group->group_name = 'group_hbp_metadata';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'handbook_page';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Metadata',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_hbp_current_version',
+      1 => 'field_hbp_original_issue',
+      2 => 'field_hbp_categories',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Metadata',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => '',
+        'description' => '',
+      ),
+      'formatter' => 'collapsed',
+    ),
+  );
+  $export['group_hbp_metadata|node|handbook_page|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_hbp_related|node|handbook_page|form';
+  $field_group->group_name = 'group_hbp_related';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'handbook_page';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Related Info',
+    'weight' => '3',
+    'children' => array(
+      0 => 'field_hbp_attachments',
+      1 => 'field_hbp_related',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_hbp_related|node|handbook_page|form'] = $field_group;
 
   return $export;
 }
