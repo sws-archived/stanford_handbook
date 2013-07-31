@@ -795,7 +795,7 @@ function stanford_handbook_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_parent_chapter',
       'label' => 'Parent Chapter',
-      'required' => FALSE,
+      'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
@@ -2016,7 +2016,7 @@ function stanford_handbook_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_parent_chapter',
       'label' => 'Parent Chapter',
-      'required' => FALSE,
+      'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
