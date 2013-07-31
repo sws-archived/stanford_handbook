@@ -117,7 +117,7 @@
 
  			 		 $subsection_i = 1;
 
-           foreach ($content['field_hbp_subsection']['#items'] as $k => $v) {                    
+           foreach ($content['field_hbp_subsection']['#items'] as $k => $v) {
 
                  $item = $content['field_hbp_subsection'][$k]['entity']['field_collection_item'][$v['value']];
                  
