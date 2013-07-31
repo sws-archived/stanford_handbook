@@ -103,3 +103,4 @@ features[variable][] = pathauto_node_subchapter_pattern
 features[views_view][] = chapters
 features[views_view][] = handbook_page_previous_next
 features[views_view][] = handbook_pages
+features[views_view][] = subchapters
