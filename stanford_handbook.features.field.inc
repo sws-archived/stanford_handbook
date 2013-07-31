@@ -928,7 +928,7 @@ function stanford_handbook_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_hbp_number',
-      'label' => 'Policy Number',
+      'label' => 'Page Number',
       'required' => 1,
       'settings' => array(
         'custom_add_another' => '',
@@ -1078,7 +1078,7 @@ function stanford_handbook_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_hbp_subsection',
-      'label' => 'Policy subsection',
+      'label' => 'Subsection',
       'required' => 0,
       'settings' => array(
         'custom_add_another' => 'Add Subsection',
@@ -2202,12 +2202,12 @@ function stanford_handbook_field_default_fields() {
   t('Parent Chapter');
   t('Parent Handbook');
   t('Parent Subchapter');
-  t('Policy Number');
-  t('Policy subsection');
+  t('Page Number');
   t('Related Policies');
   t('Subchapter Number');
   t('Subchapter Summary');
   t('Subchapter Title');
+  t('Subsection');
   t('Subsection body');
   t('Subsection title');
   t('Suppress Jump-to links');
