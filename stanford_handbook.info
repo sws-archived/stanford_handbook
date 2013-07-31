@@ -100,7 +100,3 @@ features[variable][] = pathauto_node_chapter_pattern
 features[variable][] = pathauto_node_handbook_pattern
 features[variable][] = pathauto_node_handbook_page_pattern
 features[variable][] = pathauto_node_subchapter_pattern
-features[views_view][] = dor_policy_chapter_listing
-features[views_view][] = dor_policy_document_listing
-features[views_view][] = dor_policy_section_listing
-features[views_view][] = policy_book_listing
