@@ -35,7 +35,7 @@ function stanford_handbook_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'ant_pattern_handbook_page';
-  $strongarm->value = '[node:field-hb-page-title]';
+  $strongarm->value = '[node:field-parent-chapter:field_chapter_number].[node:field-hbp-parent-subchapter:field_subchapter_number].[node:field-hbp-number] [node:field-hbp-title]';
   $export['ant_pattern_handbook_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -56,7 +56,7 @@ function stanford_handbook_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'ant_pattern_subchapter';
-  $strongarm->value = '[node:field-policy-subchapter-number]. [node:field-policy-subchapter-name]';
+  $strongarm->value = '[node:field-parent-chapter:field_chapter_number].[node:field-subchapter-number] [node:field-subchapter-name]';
   $export['ant_pattern_subchapter'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -403,21 +403,21 @@ function stanford_handbook_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_handbook_page_pattern';
-  $strongarm->value = '[node:field_parent_chapter]/[node:title]';
+  $strongarm->value = 'handbooks/[node:field-parent-chapter:field_chapter_handbook]/chapter-[node:field-parent-chapter:field_chapter_number]/subchapter-[node:field-hbp-parent-subchapter:field_subchapter_number]/page-[node:field-parent-chapter:field_chapter_number]-[node:field-hbp-parent-subchapter:field_subchapter_number]-[node:field_hbp_number]';
   $export['pathauto_node_handbook_page_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_chapter_pattern';
-  $strongarm->value = 'handbooks/[node:field_chapter_handbook]/[node:title]';
+  $strongarm->value = 'handbooks/[node:field_chapter_handbook]/chapter-[node:field_chapter_number]';
   $export['pathauto_node_chapter_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_subchapter_pattern';
-  $strongarm->value = 'handbooks/chapter-[node:field-parent-chapter]/subchapter-[node:field-policy-subchapter]';
+  $strongarm->value = 'handbooks/[node:field-parent-chapter:field_chapter_handbook]/chapter-[node:field-parent-chapter:field_chapter_number]/subchapter-[node:field_subchapter_number]';
   $export['pathauto_node_subchapter_pattern'] = $strongarm;
 
   return $export;
