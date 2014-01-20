@@ -20,16 +20,16 @@ function stanford_handbook_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'ant_pattern_chapter';
-  $strongarm->value = '[node:field_chapter_number]. [node:field_chapter_title]';
-  $export['ant_pattern_chapter'] = $strongarm;
+  $strongarm->name = 'ant_handbook_page';
+  $strongarm->value = '1';
+  $export['ant_handbook_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'ant_php_chapter';
-  $strongarm->value = 0;
-  $export['ant_php_chapter'] = $strongarm;
+  $strongarm->name = 'ant_pattern_chapter';
+  $strongarm->value = '[node:field_chapter_number]. [node:field_chapter_title]';
+  $export['ant_pattern_chapter'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -41,23 +41,23 @@ function stanford_handbook_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'ant_php_handbook_page';
-  $strongarm->value = 0;
-  $export['ant_php_handbook_page'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'ant_handbook_page';
-  $strongarm->value = '1';
-  $export['ant_handbook_page'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'ant_pattern_subchapter';
   $strongarm->value = '[node:field-parent-chapter:field_chapter_number].[node:field-subchapter-number] [node:field-subchapter-name]';
   $export['ant_pattern_subchapter'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_php_chapter';
+  $strongarm->value = 0;
+  $export['ant_php_chapter'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_php_handbook_page';
+  $strongarm->value = 0;
+  $export['ant_php_handbook_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -235,6 +235,15 @@ function stanford_handbook_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_chapter';
+  $strongarm->value = array(
+    0 => 'main-menu',
+  );
+  $export['menu_options_chapter'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_handbook';
   $strongarm->value = array(
     0 => 'main-menu',
@@ -253,11 +262,18 @@ function stanford_handbook_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_options_chapter';
+  $strongarm->name = 'menu_options_subchapter';
   $strongarm->value = array(
-    0 => 'main-menu',
+    0 => 'menu-admin-guide',
   );
-  $export['menu_options_chapter'] = $strongarm;
+  $export['menu_options_subchapter'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_chapter';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_chapter'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -276,25 +292,19 @@ function stanford_handbook_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_parent_chapter';
-  $strongarm->value = 'main-menu:0';
-  $export['menu_parent_chapter'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'menu_options_subchapter';
-  $strongarm->value = array(
-    0 => 'menu-admin-guide',
-  );
-  $export['menu_options_subchapter'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_subchapter';
   $strongarm->value = 'menu-admin-guide:0';
   $export['menu_parent_subchapter'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_chapter';
+  $strongarm->value = array(
+    0 => 'status',
+    1 => 'revision',
+  );
+  $export['node_options_chapter'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -319,16 +329,6 @@ function stanford_handbook_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_options_chapter';
-  $strongarm->value = array(
-    0 => 'status',
-    1 => 'revision',
-  );
-  $export['node_options_chapter'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'node_options_subchapter';
   $strongarm->value = array(
     0 => 'status',
@@ -339,16 +339,9 @@ function stanford_handbook_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_subchapter';
+  $strongarm->name = 'node_preview_chapter';
   $strongarm->value = '1';
-  $export['node_preview_subchapter'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'node_submitted_subchapter';
-  $strongarm->value = 0;
-  $export['node_submitted_subchapter'] = $strongarm;
+  $export['node_preview_chapter'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -367,9 +360,16 @@ function stanford_handbook_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_chapter';
+  $strongarm->name = 'node_preview_subchapter';
   $strongarm->value = '1';
-  $export['node_preview_chapter'] = $strongarm;
+  $export['node_preview_subchapter'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_chapter';
+  $strongarm->value = 0;
+  $export['node_submitted_chapter'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -388,16 +388,16 @@ function stanford_handbook_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_submitted_chapter';
+  $strongarm->name = 'node_submitted_subchapter';
   $strongarm->value = 0;
-  $export['node_submitted_chapter'] = $strongarm;
+  $export['node_submitted_subchapter'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_handbook_pattern';
-  $strongarm->value = 'handbooks/[node:title]';
-  $export['pathauto_node_handbook_pattern'] = $strongarm;
+  $strongarm->name = 'pathauto_node_chapter_pattern';
+  $strongarm->value = 'handbooks/[node:field_chapter_handbook]/chapter-[node:field_chapter_number]';
+  $export['pathauto_node_chapter_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -409,9 +409,9 @@ function stanford_handbook_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_chapter_pattern';
-  $strongarm->value = 'handbooks/[node:field_chapter_handbook]/chapter-[node:field_chapter_number]';
-  $export['pathauto_node_chapter_pattern'] = $strongarm;
+  $strongarm->name = 'pathauto_node_handbook_pattern';
+  $strongarm->value = 'handbooks/[node:title]';
+  $export['pathauto_node_handbook_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

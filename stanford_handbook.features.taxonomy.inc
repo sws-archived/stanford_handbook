@@ -13,10 +13,9 @@ function stanford_handbook_taxonomy_default_vocabularies() {
       'name' => 'Category',
       'machine_name' => 'category',
       'description' => 'Use terms to group policies on similar topics into categories.',
-      'hierarchy' => '1',
+      'hierarchy' => 1,
       'module' => 'taxonomy',
-      'weight' => '0',
-      'metatags' => array(),
+      'weight' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
