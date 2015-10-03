@@ -10,7 +10,8 @@
 function stanford_handbook_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'field_collection_item-field_hbp_subsection-field_hbp_subsection_body'
+  // Exported field_instance:
+  // 'field_collection_item-field_hbp_subsection-field_hbp_subsection_body'
   $field_instances['field_collection_item-field_hbp_subsection-field_hbp_subsection_body'] = array(
     'bundle' => 'field_hbp_subsection',
     'default_value' => NULL,
@@ -45,7 +46,8 @@ function stanford_handbook_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_hbp_subsection-field_hbp_subsection_title'
+  // Exported field_instance:
+  // 'field_collection_item-field_hbp_subsection-field_hbp_subsection_title'
   $field_instances['field_collection_item-field_hbp_subsection-field_hbp_subsection_title'] = array(
     'bundle' => 'field_hbp_subsection',
     'default_value' => NULL,
@@ -205,6 +207,7 @@ function stanford_handbook_field_default_field_instances() {
       'module' => 'image',
       'settings' => array(
         'insert' => 0,
+        'insert_absolute' => FALSE,
         'insert_class' => '',
         'insert_default' => 'auto',
         'insert_styles' => array(
@@ -498,6 +501,7 @@ function stanford_handbook_field_default_field_instances() {
       'module' => 'file',
       'settings' => array(
         'insert' => 0,
+        'insert_absolute' => FALSE,
         'insert_class' => '',
         'insert_default' => 'auto',
         'insert_styles' => array(
@@ -719,7 +723,8 @@ function stanford_handbook_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-handbook_page-field_hbp_hide_bullet_formatting'
+  // Exported field_instance:
+  // 'node-handbook_page-field_hbp_hide_bullet_formatting'
   $field_instances['node-handbook_page-field_hbp_hide_bullet_formatting'] = array(
     'bundle' => 'handbook_page',
     'default_value' => array(
@@ -824,6 +829,7 @@ function stanford_handbook_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 3,
