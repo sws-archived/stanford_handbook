@@ -76,7 +76,7 @@
  * @see template_preprocess_node()
  * @see template_process()
  */
-
+krumo($content);
 ?>
 
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
@@ -97,13 +97,13 @@
 
 	<?php print render($content['field_hbp_authority']); ?>
 	<?php print render($content['field_hbp_applicability']); ?>
-	<?php print render($content['field_hbp_responsibility']); ?>
-	<?php print render($content['field_hbp_statement']); ?>
-	<?php print render($content['field_hbp_purpose']); ?>
-	<?php print render($content['field_hbp_guide_supervisors']); ?>
+	<?php //print render($content['field_hbp_responsibility']); //Not in content type ?>
+	<?php //print render($content['field_hbp_statement']); //Not in content type ?>
+	<?php //print render($content['field_hbp_purpose']); //Not in content type ?>
+	<?php //print render($content['field_hbp_guide_supervisors']); //Not in content type ?>
 	<?php print render($content['field_hbp_attachments']); ?>
 	<?php print render($content['field_hbp_related']); ?>
-	<?php print render($content['field_auth_cont']); ?>
+	<?php // print render($content['field_auth_cont']); //Not in content type ?>
 	<?php print render($content['field_hbp_categories']); ?>
 	
 	<?php
@@ -120,6 +120,7 @@
            foreach ($content['field_hbp_subsection']['#items'] as $k => $v) {
 
                  $item = $content['field_hbp_subsection'][$k]['entity']['field_collection_item'][$v['value']];
+								 //krumo($item);
                  
                  print "<a id=\"anchor-". $v['value']."\"></a>";
 
@@ -158,7 +159,7 @@
         ?>
   	<?php print render($content['field_hbp_footnote']); ?>
 
-		<?php print render($content['links']); ?><?php print render($content['comments']); ?>
+		<?php //print render($content['links']); //Not in content type ?><?php // print render($content['comments']); //Not in content type ?>
 
 	</div>
 </div>
