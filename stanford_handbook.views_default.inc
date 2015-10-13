@@ -81,6 +81,9 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['fields']['view']['exclude'] = TRUE;
   $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['view']['view'] = 'handbook_pages';
+  $handler->display->display_options['fields']['view']['display'] = 'handbook_pages_titles_only_block';
+  $handler->display->display_options['fields']['view']['arguments'] = '[!nid]';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
