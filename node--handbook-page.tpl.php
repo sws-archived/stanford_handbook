@@ -76,7 +76,7 @@
  * @see template_preprocess_node()
  * @see template_process()
  */
-krumo($content);
+
 ?>
 
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
@@ -120,7 +120,6 @@ krumo($content);
            foreach ($content['field_hbp_subsection']['#items'] as $k => $v) {
 
                  $item = $content['field_hbp_subsection'][$k]['entity']['field_collection_item'][$v['value']];
-								 //krumo($item);
                  
                  print "<a id=\"anchor-". $v['value']."\"></a>";
 
