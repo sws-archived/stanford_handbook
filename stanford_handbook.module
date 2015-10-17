@@ -222,6 +222,8 @@ function stanford_handbook_preprocess_node(&$vars, $hook) {
 	if($vars['type'] == 'chapter') {
 		$vars['title'] = '1' . $vars['title'];
 		$vars['document_view'] = views_embed_view('dor_policy_document_listing','block_2');
+		drupal_add_library('system', 'ui.accordion');
+		drupal_add_js(drupal_get_path('module', 'stanford_handbook') . '/js/expand.js');
 	}
 
 	// Check formatting conditions
