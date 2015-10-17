@@ -158,7 +158,7 @@
         ?>
   	<?php print render($content['field_hbp_footnote']); ?>
 
-		<?php //print render($content['links']); //Not in content type ?><?php // print render($content['comments']); //Not in content type ?>
+		<?php print render($content['links']); ?><?php print render($content['comments']); ?>
 
 	</div>
 </div>
