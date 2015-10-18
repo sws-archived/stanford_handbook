@@ -3,7 +3,7 @@
 /**
  * Drupal attach behaviour.
  */
-Drupal.behaviors.stanford_faq = {
+Drupal.behaviors.stanford_handbook = {
   attach: function (context, settings) {
 
   var toggles = $(".collapse-toggle", context);
