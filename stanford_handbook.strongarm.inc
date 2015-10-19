@@ -411,7 +411,7 @@ function stanford_handbook_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_stanford_chapter_pattern';
-  $strongarm->value = 'handbooks/[node:field_s_chapter_handbook]/chapter-[node:field_S_chapter_number]';
+  $strongarm->value = 'handbooks/[node:field_s_chapter_handbook]/chapter-[node:field_s_chapter_number]';
   $export['pathauto_node_stanford_chapter_pattern'] = $strongarm;
 
   $strongarm = new stdClass();

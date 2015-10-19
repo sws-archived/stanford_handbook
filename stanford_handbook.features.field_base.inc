@@ -242,7 +242,7 @@ function stanford_handbook_field_default_field_bases() {
           'type' => 'property',
         ),
         'target_bundles' => array(
-          'subchapter' => 'subchapter',
+          'stanford_subchapter' => 'stanford_subchapter',
         ),
       ),
       'target_type' => 'node',
@@ -520,7 +520,7 @@ function stanford_handbook_field_default_field_bases() {
           'type' => 'property',
         ),
         'target_bundles' => array(
-          'chapter' => 'chapter',
+          'stanford_chapter' => 'stanford_chapter',
         ),
       ),
       'handler_submit' => 'Change handler',
