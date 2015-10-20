@@ -13,10 +13,10 @@ function stanford_handbook_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_hbp_content|node|handbook_page|form';
+  $field_group->identifier = 'group_hbp_content|node|stanford_handbook_page|form';
   $field_group->group_name = 'group_hbp_content';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'handbook_page';
+  $field_group->bundle = 'stanford_handbook_page';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -45,15 +45,15 @@ function stanford_handbook_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_hbp_content|node|handbook_page|form'] = $field_group;
+  $export['group_hbp_content|node|stanford_handbook_page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_hbp_essential|node|handbook_page|form';
+  $field_group->identifier = 'group_hbp_essential|node|stanford_handbook_page|form';
   $field_group->group_name = 'group_hbp_essential';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'handbook_page';
+  $field_group->bundle = 'stanford_handbook_page';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -62,7 +62,7 @@ function stanford_handbook_field_group_info() {
     'children' => array(
       0 => 'field_hbp_title',
       1 => 'field_hbp_parent_subchapter',
-      2 => 'field_parent_chapter',
+      2 => 'field_s_parent_chapter',
       3 => 'field_hbp_number',
       4 => 'field_hbp_former_number',
       5 => 'field_hbp_chapter',
@@ -80,15 +80,15 @@ function stanford_handbook_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_hbp_essential|node|handbook_page|form'] = $field_group;
+  $export['group_hbp_essential|node|stanford_handbook_page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_hbp_metadata|node|handbook_page|form';
+  $field_group->identifier = 'group_hbp_metadata|node|stanford_handbook_page|form';
   $field_group->group_name = 'group_hbp_metadata';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'handbook_page';
+  $field_group->bundle = 'stanford_handbook_page';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -110,15 +110,15 @@ function stanford_handbook_field_group_info() {
       'formatter' => 'collapsed',
     ),
   );
-  $export['group_hbp_metadata|node|handbook_page|form'] = $field_group;
+  $export['group_hbp_metadata|node|stanford_handbook_page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_hbp_related|node|handbook_page|form';
+  $field_group->identifier = 'group_hbp_related|node|stanford_handbook_page|form';
   $field_group->group_name = 'group_hbp_related';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'handbook_page';
+  $field_group->bundle = 'stanford_handbook_page';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -138,7 +138,7 @@ function stanford_handbook_field_group_info() {
       ),
     ),
   );
-  $export['group_hbp_related|node|handbook_page|form'] = $field_group;
+  $export['group_hbp_related|node|stanford_handbook_page|form'] = $field_group;
 
   return $export;
 }
