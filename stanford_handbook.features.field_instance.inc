@@ -94,7 +94,7 @@ function stanford_handbook_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -138,7 +138,7 @@ function stanford_handbook_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 1,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -171,14 +171,14 @@ function stanford_handbook_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 4,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -238,7 +238,7 @@ function stanford_handbook_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -275,11 +275,10 @@ function stanford_handbook_field_default_field_instances() {
     'description' => 'Enter the title of the Chapter',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'text',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 5,
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -366,6 +365,13 @@ function stanford_handbook_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 1,
       ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -406,6 +412,13 @@ function stanford_handbook_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+      'full' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -460,6 +473,13 @@ function stanford_handbook_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 6,
+      ),
+      'full' => array(
         'label' => 'above',
         'module' => 'file',
         'settings' => array(),
@@ -536,6 +556,13 @@ function stanford_handbook_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 3,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
       'search_index' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -582,6 +609,12 @@ function stanford_handbook_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
+      'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -637,6 +670,12 @@ function stanford_handbook_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 13,
       ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -680,6 +719,13 @@ function stanford_handbook_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 7,
+      ),
+      'full' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -744,6 +790,12 @@ function stanford_handbook_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 9,
       ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -777,6 +829,12 @@ function stanford_handbook_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
+      'full' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
@@ -818,6 +876,20 @@ function stanford_handbook_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => FALSE,
+        ),
+        'type' => 'date_default',
+        'weight' => 5,
+      ),
+      'full' => array(
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
@@ -880,6 +952,12 @@ function stanford_handbook_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 10,
       ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
       'search_index' => array(
         'label' => 'above',
         'module' => 'entityreference',
@@ -929,6 +1007,12 @@ function stanford_handbook_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
+      ),
+      'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -999,6 +1083,19 @@ function stanford_handbook_field_default_field_instances() {
         'type' => 'field_collection_view',
         'weight' => 2,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => '',
+          'delete' => '',
+          'description' => 1,
+          'edit' => '',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 2,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1041,6 +1138,12 @@ function stanford_handbook_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 12,
       ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1075,6 +1178,13 @@ function stanford_handbook_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'full' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -1130,6 +1240,12 @@ function stanford_handbook_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
+      'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
