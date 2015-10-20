@@ -144,7 +144,7 @@ function stanford_handbook_views_default_views() {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'chapters_block');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $export['chapters'] = $view;
+  $export['stanford_handbook_chapters'] = $view;
 
   $view = new view();
   $view->name = 'handbook_page_previous_next';
