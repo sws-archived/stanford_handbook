@@ -81,7 +81,7 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['fields']['view']['exclude'] = TRUE;
   $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['view']['view'] = 'handbook_pages';
+  $handler->display->display_options['fields']['view']['view'] = 'stanford_handbook_pages';
   $handler->display->display_options['fields']['view']['display'] = 'handbook_pages_titles_only_block';
   $handler->display->display_options['fields']['view']['arguments'] = '[!nid]';
   /* Field: Content: Nid */
@@ -97,7 +97,7 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="postcard-left">
-        <div>[field_chapter_image]</div>
+        <div>[field_s_chapter_image]</div>
         <div>
             <h2>[title]</h2>
             [body]
@@ -420,7 +420,7 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['fields']['view']['exclude'] = TRUE;
   $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['view']['view'] = 'handbook_pages';
+  $handler->display->display_options['fields']['view']['view'] = 'stanford_handbook_pages';
   $handler->display->display_options['fields']['view']['display'] = 'handbook_pages_titles_only_block';
   $handler->display->display_options['fields']['view']['arguments'] = '[!nid]';
   /* Field: Global: Custom text */
