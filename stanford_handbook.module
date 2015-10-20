@@ -215,11 +215,11 @@ function _stanford_handbook_insert_after_first_element(&$a, $element) {
  * @param type $hook
  */
 function stanford_handbook_preprocess_node(&$vars, $hook) {
-	if($vars['type'] == 'handbook') {
+	if($vars['type'] == 'stanford_handbook') {
 		$vars['section_view'] = views_embed_view('dor_policy_section_listing','block_1');
 		
 	}
-	if($vars['type'] == 'chapter') {
+	if($vars['type'] == 'stanford_chapter') {
 		$vars['title'] = '1' . $vars['title'];
 		$vars['document_view'] = views_embed_view('dor_policy_document_listing','block_2');
 		drupal_add_library('system', 'ui.accordion');
@@ -227,7 +227,7 @@ function stanford_handbook_preprocess_node(&$vars, $hook) {
 	}
 
 	// Check formatting conditions
-	if ($vars['type'] == 'handbook_page') {		
+	if ($vars['type'] == 'stanford_handbook_page') {
 		$vars['hide_formatting'] = false;
 		if(isset($vars['field_hbp_hide_bullet_formatting'][$vars['language']][0]['value'])){
 			if($vars['field_hbp_hide_bullet_formatting'][$vars['language']][0]['value']){
