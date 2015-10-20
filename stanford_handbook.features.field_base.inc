@@ -424,7 +424,7 @@ function stanford_handbook_field_default_field_bases() {
           'type' => 'property',
         ),
         'target_bundles' => array(
-          'handbook' => 'handbook',
+          'stanford_handbook' => 'stanford_handbook',
         ),
       ),
       'handler_submit' => 'Change handler',
