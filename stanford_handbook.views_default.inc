@@ -353,7 +353,7 @@ function stanford_handbook_views_default_views() {
   $export['stanford_handbook_pages'] = $view;
 
   $view = new view();
-  $view->name = 'subchapters';
+  $view->name = 'stanford_handbook_subchapters';
   $view->description = 'List View of Subchapter nodes in numerical order';
   $view->tag = 'stanford_handbook';
   $view->base_table = 'node';
@@ -429,23 +429,23 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div><h2>[title]</h2>
-  [body]
-         <div class="accordion" id="collapse-policies-[nid]">
-              <div class="accordion-group">
-                  <div class="accordion-heading hidden">
-                      <a class="btn collapsed" data-toggle="collapse" data-parent="#collapse-policies-[nid]" href="#my-policies-[nid]">
-                      Policies
-                      </a>
-                  </div>
-                  <div id="my-policies-[nid]" class="accordion-body collapse">
-                      <div class="accordion-inner">
-                      [view]
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  ';
+    [body]
+           <div class="accordion" id="collapse-policies-[nid]">
+                <div class="accordion-group">
+                    <div class="accordion-heading hidden">
+                        <a class="btn collapsed" data-toggle="collapse" data-parent="#collapse-policies-[nid]" href="#my-policies-[nid]">
+                        Pages
+                        </a>
+                    </div>
+                    <div id="my-policies-[nid]" class="accordion-body collapse">
+                        <div class="accordion-inner">
+                        [view]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    ';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['hide_empty'] = TRUE;
@@ -463,7 +463,7 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_parent_chapter_target_id';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_s_parent_chapter_target_id';
   $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
@@ -487,7 +487,7 @@ function stanford_handbook_views_default_views() {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'subchapters_block');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $export['subchapters'] = $view;
+  $export['stanford_handbook_subchapters'] = $view;
 
   return $export;
 }
