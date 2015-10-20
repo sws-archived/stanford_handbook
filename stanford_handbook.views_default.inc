@@ -11,7 +11,7 @@ function stanford_handbook_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'chapters';
+  $view->name = 'stanford_handbook_chapters';
   $view->description = 'List View of Chapter nodes in numerical order';
   $view->tag = 'stanford_handbook';
   $view->base_table = 'node';
@@ -35,6 +35,19 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_s_chapter_image']['id'] = 'field_s_chapter_image';
+  $handler->display->display_options['fields']['field_s_chapter_image']['table'] = 'field_data_field_s_chapter_image';
+  $handler->display->display_options['fields']['field_s_chapter_image']['field'] = 'field_s_chapter_image';
+  $handler->display->display_options['fields']['field_s_chapter_image']['label'] = '';
+  $handler->display->display_options['fields']['field_s_chapter_image']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_s_chapter_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_s_chapter_image']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_s_chapter_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_s_chapter_image']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => 'content',
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -84,44 +97,31 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="postcard-left">
-      <div>[field_chapter_image]</div>
-      <div>
-          <h2>[title]</h2>
-          [body]
+        <div>[field_chapter_image]</div>
+        <div>
+            <h2>[title]</h2>
+            [body]
 
-          <div class="accordion" id="collapse-subchapters-[nid]">
-              <div class="accordion-group">
-                  <div class="accordion-heading hidden">
-                      <a class="btn collapsed" data-toggle="collapse" data-parent="#collapse-subchapters-[nid]" href="#my-subchapters-[nid]">
-                      Subchapters
-                      </a>
-                  </div>
-                  <div id="my-subchapters-[nid]" class="accordion-body collapse in">
-                      <div class="accordion-inner">
-                      [view]
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>';
+            <div class="accordion" id="collapse-subchapters-[nid]">
+                <div class="accordion-group">
+                    <div class="accordion-heading hidden">
+                        <a class="btn collapsed" data-toggle="collapse" data-parent="#collapse-subchapters-[nid]" href="#my-subchapters-[nid]">
+                        Subchapters
+                        </a>
+                    </div>
+                    <div id="my-subchapters-[nid]" class="accordion-body collapse in">
+                        <div class="accordion-inner">
+                        [view]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = TRUE;
-  /* Field: Content: Image */
-  $handler->display->display_options['fields']['field_s_chapter_image']['id'] = 'field_s_chapter_image';
-  $handler->display->display_options['fields']['field_s_chapter_image']['table'] = 'field_data_field_s_chapter_image';
-  $handler->display->display_options['fields']['field_s_chapter_image']['field'] = 'field_s_chapter_image';
-  $handler->display->display_options['fields']['field_s_chapter_image']['label'] = '';
-  $handler->display->display_options['fields']['field_s_chapter_image']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_s_chapter_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_s_chapter_image']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_s_chapter_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_s_chapter_image']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => 'content',
-  );
   /* Sort criterion: Content: Chapter Number (field_s_chapter_number) */
   $handler->display->display_options['sorts']['field_s_chapter_number_value']['id'] = 'field_s_chapter_number_value';
   $handler->display->display_options['sorts']['field_s_chapter_number_value']['table'] = 'field_data_field_s_chapter_number';
@@ -138,7 +138,7 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'chapter' => 'chapter',
+    'stanford_chapter' => 'stanford_chapter',
   );
 
   /* Display: Block */
