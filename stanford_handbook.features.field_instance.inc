@@ -19,7 +19,7 @@ function stanford_handbook_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -55,7 +55,7 @@ function stanford_handbook_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -82,9 +82,9 @@ function stanford_handbook_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-chapter-body'
-  $field_instances['node-chapter-body'] = array(
-    'bundle' => 'chapter',
+  // Exported field_instance: 'node-stanford_chapter-body'
+  $field_instances['node-stanford_chapter-body'] = array(
+    'bundle' => 'stanford_chapter',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -94,7 +94,7 @@ function stanford_handbook_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -127,9 +127,9 @@ function stanford_handbook_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-chapter-field_chapter_handbook'
-  $field_instances['node-chapter-field_chapter_handbook'] = array(
-    'bundle' => 'chapter',
+  // Exported field_instance: 'node-stanford_chapter-field_s_chapter_handbook'
+  $field_instances['node-stanford_chapter-field_s_chapter_handbook'] = array(
+    'bundle' => 'stanford_chapter',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -138,7 +138,7 @@ function stanford_handbook_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 1,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -148,7 +148,7 @@ function stanford_handbook_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_chapter_handbook',
+    'field_name' => 'field_s_chapter_handbook',
     'label' => 'Parent Handbook',
     'required' => 1,
     'settings' => array(
@@ -164,21 +164,21 @@ function stanford_handbook_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-chapter-field_chapter_image'
-  $field_instances['node-chapter-field_chapter_image'] = array(
-    'bundle' => 'chapter',
+  // Exported field_instance: 'node-stanford_chapter-field_s_chapter_image'
+  $field_instances['node-stanford_chapter-field_s_chapter_image'] = array(
+    'bundle' => 'stanford_chapter',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 4,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -188,7 +188,7 @@ function stanford_handbook_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_chapter_image',
+    'field_name' => 'field_s_chapter_image',
     'label' => 'Image',
     'required' => 0,
     'settings' => array(
@@ -227,9 +227,9 @@ function stanford_handbook_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-chapter-field_chapter_number'
-  $field_instances['node-chapter-field_chapter_number'] = array(
-    'bundle' => 'chapter',
+  // Exported field_instance: 'node-stanford_chapter-field_s_chapter_number'
+  $field_instances['node-stanford_chapter-field_s_chapter_number'] = array(
+    'bundle' => 'stanford_chapter',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -238,7 +238,7 @@ function stanford_handbook_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -248,7 +248,7 @@ function stanford_handbook_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_chapter_number',
+    'field_name' => 'field_s_chapter_number',
     'label' => 'Chapter Number',
     'required' => 1,
     'settings' => array(
@@ -267,19 +267,18 @@ function stanford_handbook_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-chapter-field_chapter_title'
-  $field_instances['node-chapter-field_chapter_title'] = array(
-    'bundle' => 'chapter',
+  // Exported field_instance: 'node-stanford_chapter-field_s_chapter_title'
+  $field_instances['node-stanford_chapter-field_s_chapter_title'] = array(
+    'bundle' => 'stanford_chapter',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Enter the title of the Chapter',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'text',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 5,
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -289,7 +288,7 @@ function stanford_handbook_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_chapter_title',
+    'field_name' => 'field_s_chapter_title',
     'label' => 'Chapter Title',
     'required' => 0,
     'settings' => array(
@@ -307,9 +306,9 @@ function stanford_handbook_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-handbook-body'
-  $field_instances['node-handbook-body'] = array(
-    'bundle' => 'handbook',
+  // Exported field_instance: 'node-stanford_handbook-body'
+  $field_instances['node-stanford_handbook-body'] = array(
+    'bundle' => 'stanford_handbook',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -352,9 +351,9 @@ function stanford_handbook_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-handbook_page-body'
-  $field_instances['node-handbook_page-body'] = array(
-    'bundle' => 'handbook_page',
+  // Exported field_instance: 'node-stanford_handbook_page-body'
+  $field_instances['node-stanford_handbook_page-body'] = array(
+    'bundle' => 'stanford_handbook_page',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -364,7 +363,14 @@ function stanford_handbook_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 1,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -397,9 +403,10 @@ function stanford_handbook_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-handbook_page-field_hbp_applicability'
-  $field_instances['node-handbook_page-field_hbp_applicability'] = array(
-    'bundle' => 'handbook_page',
+  // Exported field_instance:
+  // 'node-stanford_handbook_page-field_hbp_applicability'
+  $field_instances['node-stanford_handbook_page-field_hbp_applicability'] = array(
+    'bundle' => 'stanford_handbook_page',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -409,7 +416,14 @@ function stanford_handbook_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 4,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -451,9 +465,10 @@ function stanford_handbook_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-handbook_page-field_hbp_attachments'
-  $field_instances['node-handbook_page-field_hbp_attachments'] = array(
-    'bundle' => 'handbook_page',
+  // Exported field_instance:
+  // 'node-stanford_handbook_page-field_hbp_attachments'
+  $field_instances['node-stanford_handbook_page-field_hbp_attachments'] = array(
+    'bundle' => 'stanford_handbook_page',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -462,7 +477,14 @@ function stanford_handbook_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 11,
+        'weight' => 6,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 6,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -520,9 +542,9 @@ function stanford_handbook_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-handbook_page-field_hbp_authority'
-  $field_instances['node-handbook_page-field_hbp_authority'] = array(
-    'bundle' => 'handbook_page',
+  // Exported field_instance: 'node-stanford_handbook_page-field_hbp_authority'
+  $field_instances['node-stanford_handbook_page-field_hbp_authority'] = array(
+    'bundle' => 'stanford_handbook_page',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -532,7 +554,14 @@ function stanford_handbook_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 3,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -572,14 +601,20 @@ function stanford_handbook_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-handbook_page-field_hbp_categories'
-  $field_instances['node-handbook_page-field_hbp_categories'] = array(
-    'bundle' => 'handbook_page',
+  // Exported field_instance: 'node-stanford_handbook_page-field_hbp_categories'
+  $field_instances['node-stanford_handbook_page-field_hbp_categories'] = array(
+    'bundle' => 'stanford_handbook_page',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
+      'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -622,9 +657,10 @@ function stanford_handbook_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-handbook_page-field_hbp_current_version'
-  $field_instances['node-handbook_page-field_hbp_current_version'] = array(
-    'bundle' => 'handbook_page',
+  // Exported field_instance:
+  // 'node-stanford_handbook_page-field_hbp_current_version'
+  $field_instances['node-stanford_handbook_page-field_hbp_current_version'] = array(
+    'bundle' => 'stanford_handbook_page',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -632,7 +668,13 @@ function stanford_handbook_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 13,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -669,9 +711,9 @@ function stanford_handbook_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-handbook_page-field_hbp_footnote'
-  $field_instances['node-handbook_page-field_hbp_footnote'] = array(
-    'bundle' => 'handbook_page',
+  // Exported field_instance: 'node-stanford_handbook_page-field_hbp_footnote'
+  $field_instances['node-stanford_handbook_page-field_hbp_footnote'] = array(
+    'bundle' => 'stanford_handbook_page',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -681,7 +723,14 @@ function stanford_handbook_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 10,
+        'weight' => 7,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 7,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -724,9 +773,9 @@ function stanford_handbook_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-handbook_page-field_hbp_hide_bullet_formatting'
-  $field_instances['node-handbook_page-field_hbp_hide_bullet_formatting'] = array(
-    'bundle' => 'handbook_page',
+  // 'node-stanford_handbook_page-field_hbp_hide_bullet_formatting'
+  $field_instances['node-stanford_handbook_page-field_hbp_hide_bullet_formatting'] = array(
+    'bundle' => 'stanford_handbook_page',
     'default_value' => array(
       0 => array(
         'value' => 0,
@@ -736,11 +785,16 @@ function stanford_handbook_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'list',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 13,
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -767,24 +821,24 @@ function stanford_handbook_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-handbook_page-field_hbp_number'
-  $field_instances['node-handbook_page-field_hbp_number'] = array(
-    'bundle' => 'handbook_page',
+  // Exported field_instance: 'node-stanford_handbook_page-field_hbp_number'
+  $field_instances['node-stanford_handbook_page-field_hbp_number'] = array(
+    'bundle' => 'stanford_handbook_page',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
-        'weight' => 6,
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -814,9 +868,10 @@ function stanford_handbook_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-handbook_page-field_hbp_original_issue'
-  $field_instances['node-handbook_page-field_hbp_original_issue'] = array(
-    'bundle' => 'handbook_page',
+  // Exported field_instance:
+  // 'node-stanford_handbook_page-field_hbp_original_issue'
+  $field_instances['node-stanford_handbook_page-field_hbp_original_issue'] = array(
+    'bundle' => 'stanford_handbook_page',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -832,7 +887,21 @@ function stanford_handbook_field_default_field_instances() {
           'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
-        'weight' => 3,
+        'weight' => 5,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => FALSE,
+        ),
+        'type' => 'date_default',
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -869,21 +938,25 @@ function stanford_handbook_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-handbook_page-field_hbp_parent_subchapter'
-  $field_instances['node-handbook_page-field_hbp_parent_subchapter'] = array(
-    'bundle' => 'handbook_page',
+  // Exported field_instance:
+  // 'node-stanford_handbook_page-field_hbp_parent_subchapter'
+  $field_instances['node-stanford_handbook_page-field_hbp_parent_subchapter'] = array(
+    'bundle' => 'stanford_handbook_page',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 12,
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -926,14 +999,20 @@ function stanford_handbook_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-handbook_page-field_hbp_related'
-  $field_instances['node-handbook_page-field_hbp_related'] = array(
-    'bundle' => 'handbook_page',
+  // Exported field_instance: 'node-stanford_handbook_page-field_hbp_related'
+  $field_instances['node-stanford_handbook_page-field_hbp_related'] = array(
+    'bundle' => 'stanford_handbook_page',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
+      ),
+      'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -984,21 +1063,34 @@ function stanford_handbook_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-handbook_page-field_hbp_subsection'
-  $field_instances['node-handbook_page-field_hbp_subsection'] = array(
-    'bundle' => 'handbook_page',
+  // Exported field_instance: 'node-stanford_handbook_page-field_hbp_subsection'
+  $field_instances['node-stanford_handbook_page-field_hbp_subsection'] = array(
+    'bundle' => 'stanford_handbook_page',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'hidden',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => '',
+          'delete' => '',
+          'description' => 1,
+          'edit' => '',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 2,
+      ),
+      'full' => array(
         'label' => 'above',
         'module' => 'field_collection',
         'settings' => array(
-          'add' => 'Add',
-          'delete' => 'Delete',
-          'description' => TRUE,
-          'edit' => 'Edit',
+          'add' => '',
+          'delete' => '',
+          'description' => 1,
+          'edit' => '',
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
@@ -1028,9 +1120,10 @@ function stanford_handbook_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-handbook_page-field_hbp_suppress_jump_to'
-  $field_instances['node-handbook_page-field_hbp_suppress_jump_to'] = array(
-    'bundle' => 'handbook_page',
+  // Exported field_instance:
+  // 'node-stanford_handbook_page-field_hbp_suppress_jump_to'
+  $field_instances['node-stanford_handbook_page-field_hbp_suppress_jump_to'] = array(
+    'bundle' => 'stanford_handbook_page',
     'default_value' => array(
       0 => array(
         'value' => 0,
@@ -1040,11 +1133,16 @@ function stanford_handbook_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'list',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 5,
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1072,9 +1170,9 @@ function stanford_handbook_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-handbook_page-field_hbp_title'
-  $field_instances['node-handbook_page-field_hbp_title'] = array(
-    'bundle' => 'handbook_page',
+  // Exported field_instance: 'node-stanford_handbook_page-field_hbp_title'
+  $field_instances['node-stanford_handbook_page-field_hbp_title'] = array(
+    'bundle' => 'stanford_handbook_page',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1084,7 +1182,14 @@ function stanford_handbook_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 13,
+        'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -1126,9 +1231,10 @@ function stanford_handbook_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-handbook_page-field_parent_chapter'
-  $field_instances['node-handbook_page-field_parent_chapter'] = array(
-    'bundle' => 'handbook_page',
+  // Exported field_instance:
+  // 'node-stanford_handbook_page-field_s_parent_chapter'
+  $field_instances['node-stanford_handbook_page-field_s_parent_chapter'] = array(
+    'bundle' => 'stanford_handbook_page',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1137,7 +1243,13 @@ function stanford_handbook_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 1,
+        'weight' => 11,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1147,7 +1259,7 @@ function stanford_handbook_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_parent_chapter',
+    'field_name' => 'field_s_parent_chapter',
     'label' => 'Parent Chapter',
     'required' => 1,
     'settings' => array(
@@ -1161,9 +1273,9 @@ function stanford_handbook_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-subchapter-body'
-  $field_instances['node-subchapter-body'] = array(
-    'bundle' => 'subchapter',
+  // Exported field_instance: 'node-stanford_subchapter-body'
+  $field_instances['node-stanford_subchapter-body'] = array(
+    'bundle' => 'stanford_subchapter',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1205,9 +1317,9 @@ function stanford_handbook_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-subchapter-field_parent_chapter'
-  $field_instances['node-subchapter-field_parent_chapter'] = array(
-    'bundle' => 'subchapter',
+  // Exported field_instance: 'node-stanford_subchapter-field_s_parent_chapter'
+  $field_instances['node-stanford_subchapter-field_s_parent_chapter'] = array(
+    'bundle' => 'stanford_subchapter',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1226,13 +1338,14 @@ function stanford_handbook_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_parent_chapter',
+    'field_name' => 'field_s_parent_chapter',
     'label' => 'Parent Chapter',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
@@ -1240,9 +1353,9 @@ function stanford_handbook_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-subchapter-field_subchapter_name'
-  $field_instances['node-subchapter-field_subchapter_name'] = array(
-    'bundle' => 'subchapter',
+  // Exported field_instance: 'node-stanford_subchapter-field_s_subchapter_name'
+  $field_instances['node-stanford_subchapter-field_s_subchapter_name'] = array(
+    'bundle' => 'stanford_subchapter',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1261,7 +1374,7 @@ function stanford_handbook_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_subchapter_name',
+    'field_name' => 'field_s_subchapter_name',
     'label' => 'Subchapter Title',
     'required' => 1,
     'settings' => array(
@@ -1309,9 +1422,10 @@ function stanford_handbook_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-subchapter-field_subchapter_number'
-  $field_instances['node-subchapter-field_subchapter_number'] = array(
-    'bundle' => 'subchapter',
+  // Exported field_instance:
+  // 'node-stanford_subchapter-field_s_subchapter_number'
+  $field_instances['node-stanford_subchapter-field_s_subchapter_number'] = array(
+    'bundle' => 'stanford_subchapter',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1330,7 +1444,7 @@ function stanford_handbook_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_subchapter_number',
+    'field_name' => 'field_s_subchapter_number',
     'label' => 'Subchapter Number',
     'required' => 0,
     'settings' => array(

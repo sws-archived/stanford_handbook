@@ -28,7 +28,7 @@ function stanford_handbook_views_api($module = NULL, $api = NULL) {
  */
 function stanford_handbook_node_info() {
   $items = array(
-    'chapter' => array(
+    'stanford_chapter' => array(
       'name' => t('Chapter'),
       'base' => 'node_content',
       'description' => t('A Chapter is a collection of subchapters and handbook pages.'),
@@ -36,7 +36,7 @@ function stanford_handbook_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
-    'handbook' => array(
+    'stanford_handbook' => array(
       'name' => t('Handbook'),
       'base' => 'node_content',
       'description' => t('A Handbook is a parent collection of information, and may include chapters, subchapters, and/or pages.'),
@@ -44,7 +44,7 @@ function stanford_handbook_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
-    'handbook_page' => array(
+    'stanford_handbook_page' => array(
       'name' => t('Handbook Page'),
       'base' => 'node_content',
       'description' => t('A Handbook Page is an individual unit within a Handbook. It can have a parent subchapter and a parent chapter.'),
@@ -52,7 +52,7 @@ function stanford_handbook_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
-    'subchapter' => array(
+    'stanford_subchapter' => array(
       'name' => t('Subchapter'),
       'base' => 'node_content',
       'description' => t('A Subchapter is a grouping of Handbook Pages within a Chapter.'),
@@ -61,5 +61,6 @@ function stanford_handbook_node_info() {
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }

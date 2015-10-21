@@ -11,7 +11,7 @@ function stanford_handbook_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'chapters';
+  $view->name = 'stanford_handbook_chapters';
   $view->description = 'List View of Chapter nodes in numerical order';
   $view->tag = 'stanford_handbook';
   $view->base_table = 'node';
@@ -36,15 +36,15 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Content: Image */
-  $handler->display->display_options['fields']['field_chapter_image']['id'] = 'field_chapter_image';
-  $handler->display->display_options['fields']['field_chapter_image']['table'] = 'field_data_field_chapter_image';
-  $handler->display->display_options['fields']['field_chapter_image']['field'] = 'field_chapter_image';
-  $handler->display->display_options['fields']['field_chapter_image']['label'] = '';
-  $handler->display->display_options['fields']['field_chapter_image']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_chapter_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_chapter_image']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_chapter_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_chapter_image']['settings'] = array(
+  $handler->display->display_options['fields']['field_s_chapter_image']['id'] = 'field_s_chapter_image';
+  $handler->display->display_options['fields']['field_s_chapter_image']['table'] = 'field_data_field_s_chapter_image';
+  $handler->display->display_options['fields']['field_s_chapter_image']['field'] = 'field_s_chapter_image';
+  $handler->display->display_options['fields']['field_s_chapter_image']['label'] = '';
+  $handler->display->display_options['fields']['field_s_chapter_image']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_s_chapter_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_s_chapter_image']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_s_chapter_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_s_chapter_image']['settings'] = array(
     'image_style' => 'thumbnail',
     'image_link' => 'content',
   );
@@ -81,7 +81,7 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['fields']['view']['exclude'] = TRUE;
   $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['view']['view'] = 'handbook_pages';
+  $handler->display->display_options['fields']['view']['view'] = 'stanford_handbook_pages';
   $handler->display->display_options['fields']['view']['display'] = 'handbook_pages_titles_only_block';
   $handler->display->display_options['fields']['view']['arguments'] = '[!nid]';
   /* Field: Content: Nid */
@@ -97,35 +97,35 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="postcard-left">
-      <div>[field_chapter_image]</div>
-      <div>
-          <h2>[title]</h2>
-          [body]
+        <div>[field_s_chapter_image]</div>
+        <div>
+            <h2>[title]</h2>
+            [body]
 
-          <div class="accordion" id="collapse-subchapters-[nid]">
-              <div class="accordion-group">
-                  <div class="accordion-heading hidden">
-                      <a class="btn collapsed" data-toggle="collapse" data-parent="#collapse-subchapters-[nid]" href="#my-subchapters-[nid]">
-                      Subchapters
-                      </a>
-                  </div>
-                  <div id="my-subchapters-[nid]" class="accordion-body collapse in">
-                      <div class="accordion-inner">
-                      [view]
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>';
+            <div class="accordion" id="collapse-subchapters-[nid]">
+                <div class="accordion-group">
+                    <div class="accordion-heading hidden">
+                        <a class="btn collapsed" data-toggle="collapse" data-parent="#collapse-subchapters-[nid]" href="#my-subchapters-[nid]">
+                        Subchapters
+                        </a>
+                    </div>
+                    <div id="my-subchapters-[nid]" class="accordion-body collapse in">
+                        <div class="accordion-inner">
+                        [view]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = TRUE;
-  /* Sort criterion: Content: Chapter Number (field_chapter_number) */
-  $handler->display->display_options['sorts']['field_chapter_number_value']['id'] = 'field_chapter_number_value';
-  $handler->display->display_options['sorts']['field_chapter_number_value']['table'] = 'field_data_field_chapter_number';
-  $handler->display->display_options['sorts']['field_chapter_number_value']['field'] = 'field_chapter_number_value';
+  /* Sort criterion: Content: Chapter Number (field_s_chapter_number) */
+  $handler->display->display_options['sorts']['field_s_chapter_number_value']['id'] = 'field_s_chapter_number_value';
+  $handler->display->display_options['sorts']['field_s_chapter_number_value']['table'] = 'field_data_field_s_chapter_number';
+  $handler->display->display_options['sorts']['field_s_chapter_number_value']['field'] = 'field_s_chapter_number_value';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -138,16 +138,16 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'chapter' => 'chapter',
+    'stanford_chapter' => 'stanford_chapter',
   );
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'chapters_block');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $export['chapters'] = $view;
+  $export['stanford_handbook_chapters'] = $view;
 
   $view = new view();
-  $view->name = 'handbook_page_previous_next';
+  $view->name = 'stanford_handbook_page_previous_next';
   $view->description = 'Sequential list of all handbook pages, for populating the Prev/Next buttons used by the Custom Pagers module';
   $view->tag = 'stanford_handbook';
   $view->base_table = 'node';
@@ -172,11 +172,11 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: Entity Reference: Referenced Entity */
-  $handler->display->display_options['relationships']['field_parent_chapter_target_id']['id'] = 'field_parent_chapter_target_id';
-  $handler->display->display_options['relationships']['field_parent_chapter_target_id']['table'] = 'field_data_field_parent_chapter';
-  $handler->display->display_options['relationships']['field_parent_chapter_target_id']['field'] = 'field_parent_chapter_target_id';
-  $handler->display->display_options['relationships']['field_parent_chapter_target_id']['label'] = 'Parent Chapter';
-  $handler->display->display_options['relationships']['field_parent_chapter_target_id']['required'] = TRUE;
+  $handler->display->display_options['relationships']['field_s_parent_chapter_target_id']['id'] = 'field_s_parent_chapter_target_id';
+  $handler->display->display_options['relationships']['field_s_parent_chapter_target_id']['table'] = 'field_data_field_s_parent_chapter';
+  $handler->display->display_options['relationships']['field_s_parent_chapter_target_id']['field'] = 'field_s_parent_chapter_target_id';
+  $handler->display->display_options['relationships']['field_s_parent_chapter_target_id']['label'] = 'Parent chapter';
+  $handler->display->display_options['relationships']['field_s_parent_chapter_target_id']['required'] = TRUE;
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_hbp_parent_subchapter_target_id']['id'] = 'field_hbp_parent_subchapter_target_id';
   $handler->display->display_options['relationships']['field_hbp_parent_subchapter_target_id']['table'] = 'field_data_field_hbp_parent_subchapter';
@@ -198,16 +198,16 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['fields']['path']['field'] = 'path';
   $handler->display->display_options['fields']['path']['label'] = '';
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
-  /* Sort criterion: Content: Chapter Number (field_chapter_number) */
-  $handler->display->display_options['sorts']['field_chapter_number_value']['id'] = 'field_chapter_number_value';
-  $handler->display->display_options['sorts']['field_chapter_number_value']['table'] = 'field_data_field_chapter_number';
-  $handler->display->display_options['sorts']['field_chapter_number_value']['field'] = 'field_chapter_number_value';
-  $handler->display->display_options['sorts']['field_chapter_number_value']['relationship'] = 'field_parent_chapter_target_id';
-  /* Sort criterion: Content: Subchapter Number (field_subchapter_number) */
-  $handler->display->display_options['sorts']['field_subchapter_number_value']['id'] = 'field_subchapter_number_value';
-  $handler->display->display_options['sorts']['field_subchapter_number_value']['table'] = 'field_data_field_subchapter_number';
-  $handler->display->display_options['sorts']['field_subchapter_number_value']['field'] = 'field_subchapter_number_value';
-  $handler->display->display_options['sorts']['field_subchapter_number_value']['relationship'] = 'field_hbp_parent_subchapter_target_id';
+  /* Sort criterion: Content: Chapter Number (field_s_chapter_number) */
+  $handler->display->display_options['sorts']['field_s_chapter_number_value']['id'] = 'field_s_chapter_number_value';
+  $handler->display->display_options['sorts']['field_s_chapter_number_value']['table'] = 'field_data_field_s_chapter_number';
+  $handler->display->display_options['sorts']['field_s_chapter_number_value']['field'] = 'field_s_chapter_number_value';
+  $handler->display->display_options['sorts']['field_s_chapter_number_value']['relationship'] = 'field_s_parent_chapter_target_id';
+  /* Sort criterion: Content: Subchapter Number (field_s_subchapter_number) */
+  $handler->display->display_options['sorts']['field_s_subchapter_number_value']['id'] = 'field_s_subchapter_number_value';
+  $handler->display->display_options['sorts']['field_s_subchapter_number_value']['table'] = 'field_data_field_s_subchapter_number';
+  $handler->display->display_options['sorts']['field_s_subchapter_number_value']['field'] = 'field_s_subchapter_number_value';
+  $handler->display->display_options['sorts']['field_s_subchapter_number_value']['relationship'] = 'field_hbp_parent_subchapter_target_id';
   /* Sort criterion: Content: Page Number (field_hbp_number) */
   $handler->display->display_options['sorts']['field_hbp_number_value']['id'] = 'field_hbp_number_value';
   $handler->display->display_options['sorts']['field_hbp_number_value']['table'] = 'field_data_field_hbp_number';
@@ -224,12 +224,12 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'handbook_page' => 'handbook_page',
+    'stanford_handbook_page' => 'stanford_handbook_page',
   );
-  $export['handbook_page_previous_next'] = $view;
+  $export['stanford_handbook_page_previous_next'] = $view;
 
   $view = new view();
-  $view->name = 'handbook_pages';
+  $view->name = 'stanford_handbook_pages';
   $view->description = 'List View of Handbook Page nodes in numerical order';
   $view->tag = 'stanford_handbook';
   $view->base_table = 'node';
@@ -260,11 +260,11 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['relationships']['field_hbp_parent_subchapter_target_id']['label'] = 'Parent Subchapter';
   $handler->display->display_options['relationships']['field_hbp_parent_subchapter_target_id']['required'] = TRUE;
   /* Relationship: Entity Reference: Referenced Entity */
-  $handler->display->display_options['relationships']['field_parent_chapter_target_id']['id'] = 'field_parent_chapter_target_id';
-  $handler->display->display_options['relationships']['field_parent_chapter_target_id']['table'] = 'field_data_field_parent_chapter';
-  $handler->display->display_options['relationships']['field_parent_chapter_target_id']['field'] = 'field_parent_chapter_target_id';
-  $handler->display->display_options['relationships']['field_parent_chapter_target_id']['label'] = 'Parent Chapter';
-  $handler->display->display_options['relationships']['field_parent_chapter_target_id']['required'] = TRUE;
+  $handler->display->display_options['relationships']['field_s_parent_chapter_target_id']['id'] = 'field_s_parent_chapter_target_id';
+  $handler->display->display_options['relationships']['field_s_parent_chapter_target_id']['table'] = 'field_data_field_s_parent_chapter';
+  $handler->display->display_options['relationships']['field_s_parent_chapter_target_id']['field'] = 'field_s_parent_chapter_target_id';
+  $handler->display->display_options['relationships']['field_s_parent_chapter_target_id']['label'] = 'Parent chapter';
+  $handler->display->display_options['relationships']['field_s_parent_chapter_target_id']['required'] = TRUE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -294,16 +294,16 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['fields']['view_node']['element_wrapper_class'] = 'more-link';
   $handler->display->display_options['fields']['view_node']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['view_node']['text'] = 'View Handbook Page';
-  /* Sort criterion: Content: Chapter Number (field_chapter_number) */
-  $handler->display->display_options['sorts']['field_chapter_number_value']['id'] = 'field_chapter_number_value';
-  $handler->display->display_options['sorts']['field_chapter_number_value']['table'] = 'field_data_field_chapter_number';
-  $handler->display->display_options['sorts']['field_chapter_number_value']['field'] = 'field_chapter_number_value';
-  $handler->display->display_options['sorts']['field_chapter_number_value']['relationship'] = 'field_parent_chapter_target_id';
-  /* Sort criterion: Content: Subchapter Number (field_subchapter_number) */
-  $handler->display->display_options['sorts']['field_subchapter_number_value']['id'] = 'field_subchapter_number_value';
-  $handler->display->display_options['sorts']['field_subchapter_number_value']['table'] = 'field_data_field_subchapter_number';
-  $handler->display->display_options['sorts']['field_subchapter_number_value']['field'] = 'field_subchapter_number_value';
-  $handler->display->display_options['sorts']['field_subchapter_number_value']['relationship'] = 'field_hbp_parent_subchapter_target_id';
+  /* Sort criterion: Content: Chapter Number (field_s_chapter_number) */
+  $handler->display->display_options['sorts']['field_s_chapter_number_value']['id'] = 'field_s_chapter_number_value';
+  $handler->display->display_options['sorts']['field_s_chapter_number_value']['table'] = 'field_data_field_s_chapter_number';
+  $handler->display->display_options['sorts']['field_s_chapter_number_value']['field'] = 'field_s_chapter_number_value';
+  $handler->display->display_options['sorts']['field_s_chapter_number_value']['relationship'] = 'field_s_parent_chapter_target_id';
+  /* Sort criterion: Content: Subchapter Number (field_s_subchapter_number) */
+  $handler->display->display_options['sorts']['field_s_subchapter_number_value']['id'] = 'field_s_subchapter_number_value';
+  $handler->display->display_options['sorts']['field_s_subchapter_number_value']['table'] = 'field_data_field_s_subchapter_number';
+  $handler->display->display_options['sorts']['field_s_subchapter_number_value']['field'] = 'field_s_subchapter_number_value';
+  $handler->display->display_options['sorts']['field_s_subchapter_number_value']['relationship'] = 'field_hbp_parent_subchapter_target_id';
   /* Sort criterion: Content: Page Number (field_hbp_number) */
   $handler->display->display_options['sorts']['field_hbp_number_value']['id'] = 'field_hbp_number_value';
   $handler->display->display_options['sorts']['field_hbp_number_value']['table'] = 'field_data_field_hbp_number';
@@ -330,7 +330,7 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'handbook_page' => 'handbook_page',
+    'stanford_handbook_page' => 'stanford_handbook_page',
   );
 
   /* Display: Master Block */
@@ -350,10 +350,10 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $export['handbook_pages'] = $view;
+  $export['stanford_handbook_pages'] = $view;
 
   $view = new view();
-  $view->name = 'subchapters';
+  $view->name = 'stanford_handbook_subchapters';
   $view->description = 'List View of Subchapter nodes in numerical order';
   $view->tag = 'stanford_handbook';
   $view->base_table = 'node';
@@ -378,11 +378,11 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: Entity Reference: Referenced Entity */
-  $handler->display->display_options['relationships']['field_parent_chapter_target_id']['id'] = 'field_parent_chapter_target_id';
-  $handler->display->display_options['relationships']['field_parent_chapter_target_id']['table'] = 'field_data_field_parent_chapter';
-  $handler->display->display_options['relationships']['field_parent_chapter_target_id']['field'] = 'field_parent_chapter_target_id';
-  $handler->display->display_options['relationships']['field_parent_chapter_target_id']['label'] = 'Parent Chapter';
-  $handler->display->display_options['relationships']['field_parent_chapter_target_id']['required'] = TRUE;
+  $handler->display->display_options['relationships']['field_s_parent_chapter_target_id']['id'] = 'field_s_parent_chapter_target_id';
+  $handler->display->display_options['relationships']['field_s_parent_chapter_target_id']['table'] = 'field_data_field_s_parent_chapter';
+  $handler->display->display_options['relationships']['field_s_parent_chapter_target_id']['field'] = 'field_s_parent_chapter_target_id';
+  $handler->display->display_options['relationships']['field_s_parent_chapter_target_id']['label'] = 'Parent chapter';
+  $handler->display->display_options['relationships']['field_s_parent_chapter_target_id']['required'] = TRUE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -420,7 +420,7 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['fields']['view']['exclude'] = TRUE;
   $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['view']['view'] = 'handbook_pages';
+  $handler->display->display_options['fields']['view']['view'] = 'stanford_handbook_pages';
   $handler->display->display_options['fields']['view']['display'] = 'handbook_pages_titles_only_block';
   $handler->display->display_options['fields']['view']['arguments'] = '[!nid]';
   /* Field: Global: Custom text */
@@ -429,41 +429,41 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div><h2>[title]</h2>
-  [body]
-         <div class="accordion" id="collapse-policies-[nid]">
-              <div class="accordion-group">
-                  <div class="accordion-heading hidden">
-                      <a class="btn collapsed" data-toggle="collapse" data-parent="#collapse-policies-[nid]" href="#my-policies-[nid]">
-                      Policies
-                      </a>
-                  </div>
-                  <div id="my-policies-[nid]" class="accordion-body collapse">
-                      <div class="accordion-inner">
-                      [view]
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  ';
+    [body]
+           <div class="accordion" id="collapse-policies-[nid]">
+                <div class="accordion-group">
+                    <div class="accordion-heading hidden">
+                        <a class="btn collapsed" data-toggle="collapse" data-parent="#collapse-policies-[nid]" href="#my-policies-[nid]">
+                        Pages
+                        </a>
+                    </div>
+                    <div id="my-policies-[nid]" class="accordion-body collapse">
+                        <div class="accordion-inner">
+                        [view]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    ';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = TRUE;
-  /* Sort criterion: Content: Chapter Number (field_chapter_number) */
-  $handler->display->display_options['sorts']['field_chapter_number_value']['id'] = 'field_chapter_number_value';
-  $handler->display->display_options['sorts']['field_chapter_number_value']['table'] = 'field_data_field_chapter_number';
-  $handler->display->display_options['sorts']['field_chapter_number_value']['field'] = 'field_chapter_number_value';
-  $handler->display->display_options['sorts']['field_chapter_number_value']['relationship'] = 'field_parent_chapter_target_id';
-  /* Sort criterion: Content: Subchapter Number (field_subchapter_number) */
-  $handler->display->display_options['sorts']['field_subchapter_number_value']['id'] = 'field_subchapter_number_value';
-  $handler->display->display_options['sorts']['field_subchapter_number_value']['table'] = 'field_data_field_subchapter_number';
-  $handler->display->display_options['sorts']['field_subchapter_number_value']['field'] = 'field_subchapter_number_value';
+  /* Sort criterion: Content: Chapter Number (field_s_chapter_number) */
+  $handler->display->display_options['sorts']['field_s_chapter_number_value']['id'] = 'field_s_chapter_number_value';
+  $handler->display->display_options['sorts']['field_s_chapter_number_value']['table'] = 'field_data_field_s_chapter_number';
+  $handler->display->display_options['sorts']['field_s_chapter_number_value']['field'] = 'field_s_chapter_number_value';
+  $handler->display->display_options['sorts']['field_s_chapter_number_value']['relationship'] = 'field_s_parent_chapter_target_id';
+  /* Sort criterion: Content: Subchapter Number (field_s_subchapter_number) */
+  $handler->display->display_options['sorts']['field_s_subchapter_number_value']['id'] = 'field_s_subchapter_number_value';
+  $handler->display->display_options['sorts']['field_s_subchapter_number_value']['table'] = 'field_data_field_s_subchapter_number';
+  $handler->display->display_options['sorts']['field_s_subchapter_number_value']['field'] = 'field_s_subchapter_number_value';
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_parent_chapter_target_id';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_s_parent_chapter_target_id';
   $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
@@ -481,13 +481,13 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'subchapter' => 'subchapter',
+    'stanford_subchapter' => 'stanford_subchapter',
   );
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'subchapters_block');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $export['subchapters'] = $view;
+  $export['stanford_handbook_subchapters'] = $view;
 
   return $export;
 }

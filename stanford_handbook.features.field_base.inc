@@ -10,102 +10,6 @@
 function stanford_handbook_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_chapter_handbook'
-  $field_bases['field_chapter_handbook'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_chapter_handbook',
-    'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'entityreference',
-    'settings' => array(
-      'handler' => 'base',
-      'handler_settings' => array(
-        'behaviors' => array(
-          'views-select-list' => array(
-            'status' => 0,
-          ),
-        ),
-        'sort' => array(
-          'direction' => 'ASC',
-          'property' => 'title',
-          'type' => 'property',
-        ),
-        'target_bundles' => array(
-          'handbook' => 'handbook',
-        ),
-      ),
-      'handler_submit' => 'Change handler',
-      'target_type' => 'node',
-    ),
-    'translatable' => 0,
-    'type' => 'entityreference',
-  );
-
-  // Exported field_base: 'field_chapter_image'
-  $field_bases['field_chapter_image'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_chapter_image',
-    'indexes' => array(
-      'fid' => array(
-        0 => 'fid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'image',
-    'settings' => array(
-      'default_image' => 0,
-      'uri_scheme' => 'public',
-    ),
-    'translatable' => 0,
-    'type' => 'image',
-  );
-
-  // Exported field_base: 'field_chapter_number'
-  $field_bases['field_chapter_number'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_chapter_number',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'number',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'number_integer',
-  );
-
-  // Exported field_base: 'field_chapter_title'
-  $field_bases['field_chapter_title'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_chapter_title',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
   // Exported field_base: 'field_hbp_applicability'
   $field_bases['field_hbp_applicability'] = array(
     'active' => 1,
@@ -338,7 +242,7 @@ function stanford_handbook_field_default_field_bases() {
           'type' => 'property',
         ),
         'target_bundles' => array(
-          'subchapter' => 'subchapter',
+          'stanford_subchapter' => 'stanford_subchapter',
         ),
       ),
       'target_type' => 'node',
@@ -492,13 +396,13 @@ function stanford_handbook_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_parent_chapter'
-  $field_bases['field_parent_chapter'] = array(
+  // Exported field_base: 'field_s_chapter_handbook'
+  $field_bases['field_s_chapter_handbook'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_parent_chapter',
+    'field_name' => 'field_s_chapter_handbook',
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -520,7 +424,7 @@ function stanford_handbook_field_default_field_bases() {
           'type' => 'property',
         ),
         'target_bundles' => array(
-          'chapter' => 'chapter',
+          'stanford_handbook' => 'stanford_handbook',
         ),
       ),
       'handler_submit' => 'Change handler',
@@ -530,13 +434,50 @@ function stanford_handbook_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_subchapter_name'
-  $field_bases['field_subchapter_name'] = array(
+  // Exported field_base: 'field_s_chapter_image'
+  $field_bases['field_s_chapter_image'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_subchapter_name',
+    'field_name' => 'field_s_chapter_image',
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'image',
+    'settings' => array(
+      'default_image' => 0,
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'image',
+  );
+
+  // Exported field_base: 'field_s_chapter_number'
+  $field_bases['field_s_chapter_number'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_s_chapter_number',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'number_integer',
+  );
+
+  // Exported field_base: 'field_s_chapter_title'
+  $field_bases['field_s_chapter_title'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_s_chapter_title',
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -551,13 +492,72 @@ function stanford_handbook_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_subchapter_number'
-  $field_bases['field_subchapter_number'] = array(
+  // Exported field_base: 'field_s_parent_chapter'
+  $field_bases['field_s_parent_chapter'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_subchapter_number',
+    'field_name' => 'field_s_parent_chapter',
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'direction' => 'ASC',
+          'property' => 'title',
+          'type' => 'property',
+        ),
+        'target_bundles' => array(
+          'stanford_chapter' => 'stanford_chapter',
+        ),
+      ),
+      'handler_submit' => 'Change handler',
+      'target_type' => 'node',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_s_subchapter_name'
+  $field_bases['field_s_subchapter_name'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_s_subchapter_name',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_s_subchapter_number'
+  $field_bases['field_s_subchapter_number'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_s_subchapter_number',
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
