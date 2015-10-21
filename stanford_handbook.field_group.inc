@@ -24,15 +24,12 @@ function stanford_handbook_field_group_info() {
     'weight' => '1',
     'children' => array(
       0 => 'body',
-      1 => 'field_hbp_subsection',
-      2 => 'field_hbp_suppress_jump_to',
+      1 => 'field_hbp_applicability',
+      2 => 'field_hbp_attachments',
       3 => 'field_hbp_authority',
-      4 => 'field_hbp_applicability',
-      5 => 'field_hbp_responsibility',
-      6 => 'field_hbp_statement',
-      7 => 'field_hbp_purpose',
-      8 => 'field_hbp_guide_supervisors',
-      9 => 'field_hbp_footnote',
+      4 => 'field_hbp_footnote',
+      5 => 'field_hbp_subsection',
+      6 => 'field_hbp_suppress_jump_to',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -60,14 +57,11 @@ function stanford_handbook_field_group_info() {
     'label' => 'Essential Info',
     'weight' => '0',
     'children' => array(
-      0 => 'field_hbp_title',
+      0 => 'field_hbp_number',
       1 => 'field_hbp_parent_subchapter',
-      2 => 'field_s_parent_chapter',
-      3 => 'field_hbp_number',
-      4 => 'field_hbp_former_number',
-      5 => 'field_hbp_chapter',
-      6 => 'field_hbp_subchapter',
-      7 => 'title',
+      2 => 'field_hbp_title',
+      3 => 'field_s_parent_chapter',
+      4 => 'title',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -95,9 +89,9 @@ function stanford_handbook_field_group_info() {
     'label' => 'Metadata',
     'weight' => '2',
     'children' => array(
-      0 => 'field_hbp_current_version',
-      1 => 'field_hbp_original_issue',
-      2 => 'field_hbp_categories',
+      0 => 'field_hbp_categories',
+      1 => 'field_hbp_current_version',
+      2 => 'field_hbp_original_issue',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -125,8 +119,7 @@ function stanford_handbook_field_group_info() {
     'label' => 'Related Info',
     'weight' => '3',
     'children' => array(
-      0 => 'field_hbp_attachments',
-      1 => 'field_hbp_related',
+      0 => 'field_hbp_related',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
