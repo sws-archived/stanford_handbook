@@ -6,6 +6,7 @@ version = 7.x-2.x-dev
 project = stanford_handbook
 dependencies[] = auto_nodetitle
 dependencies[] = ctools
+dependencies[] = custom_pagers
 dependencies[] = date
 dependencies[] = entity_token
 dependencies[] = entityreference
