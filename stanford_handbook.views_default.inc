@@ -353,6 +353,104 @@ function stanford_handbook_views_default_views() {
   $export['stanford_handbook_pages'] = $view;
 
   $view = new view();
+  $view->name = 'stanford_handbook_print_handbook_pages';
+  $view->description = 'Print View of handbook page nodes';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Print Handbook Pages';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Print Handbook Pages';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '3600';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '3600';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['view_mode'] = 'full';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_s_parent_chapter_target_id']['id'] = 'field_s_parent_chapter_target_id';
+  $handler->display->display_options['relationships']['field_s_parent_chapter_target_id']['table'] = 'field_data_field_s_parent_chapter';
+  $handler->display->display_options['relationships']['field_s_parent_chapter_target_id']['field'] = 'field_s_parent_chapter_target_id';
+  $handler->display->display_options['relationships']['field_s_parent_chapter_target_id']['label'] = 'Parent chapter';
+  $handler->display->display_options['relationships']['field_s_parent_chapter_target_id']['required'] = TRUE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_hbp_parent_subchapter_target_id']['id'] = 'field_hbp_parent_subchapter_target_id';
+  $handler->display->display_options['relationships']['field_hbp_parent_subchapter_target_id']['table'] = 'field_data_field_hbp_parent_subchapter';
+  $handler->display->display_options['relationships']['field_hbp_parent_subchapter_target_id']['field'] = 'field_hbp_parent_subchapter_target_id';
+  $handler->display->display_options['relationships']['field_hbp_parent_subchapter_target_id']['label'] = 'Parent subchapter';
+  $handler->display->display_options['relationships']['field_hbp_parent_subchapter_target_id']['required'] = TRUE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Sort criterion: Content: Chapter Number (field_s_chapter_number) */
+  $handler->display->display_options['sorts']['field_s_chapter_number_value']['id'] = 'field_s_chapter_number_value';
+  $handler->display->display_options['sorts']['field_s_chapter_number_value']['table'] = 'field_data_field_s_chapter_number';
+  $handler->display->display_options['sorts']['field_s_chapter_number_value']['field'] = 'field_s_chapter_number_value';
+  $handler->display->display_options['sorts']['field_s_chapter_number_value']['relationship'] = 'field_s_parent_chapter_target_id';
+  /* Sort criterion: Content: Subchapter Number (field_s_subchapter_number) */
+  $handler->display->display_options['sorts']['field_s_subchapter_number_value']['id'] = 'field_s_subchapter_number_value';
+  $handler->display->display_options['sorts']['field_s_subchapter_number_value']['table'] = 'field_data_field_s_subchapter_number';
+  $handler->display->display_options['sorts']['field_s_subchapter_number_value']['field'] = 'field_s_subchapter_number_value';
+  $handler->display->display_options['sorts']['field_s_subchapter_number_value']['relationship'] = 'field_hbp_parent_subchapter_target_id';
+  /* Sort criterion: Content: Page Number (field_hbp_number) */
+  $handler->display->display_options['sorts']['field_hbp_number_value']['id'] = 'field_hbp_number_value';
+  $handler->display->display_options['sorts']['field_hbp_number_value']['table'] = 'field_data_field_hbp_number';
+  $handler->display->display_options['sorts']['field_hbp_number_value']['field'] = 'field_hbp_number_value';
+  /* Contextual filter: Content: Chapter Number (field_s_chapter_number) */
+  $handler->display->display_options['arguments']['field_s_chapter_number_value']['id'] = 'field_s_chapter_number_value';
+  $handler->display->display_options['arguments']['field_s_chapter_number_value']['table'] = 'field_data_field_s_chapter_number';
+  $handler->display->display_options['arguments']['field_s_chapter_number_value']['field'] = 'field_s_chapter_number_value';
+  $handler->display->display_options['arguments']['field_s_chapter_number_value']['relationship'] = 'field_s_parent_chapter_target_id';
+  $handler->display->display_options['arguments']['field_s_chapter_number_value']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_s_chapter_number_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_s_chapter_number_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_s_chapter_number_value']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Content: Subchapter Number (field_s_subchapter_number) */
+  $handler->display->display_options['arguments']['field_s_subchapter_number_value']['id'] = 'field_s_subchapter_number_value';
+  $handler->display->display_options['arguments']['field_s_subchapter_number_value']['table'] = 'field_data_field_s_subchapter_number';
+  $handler->display->display_options['arguments']['field_s_subchapter_number_value']['field'] = 'field_s_subchapter_number_value';
+  $handler->display->display_options['arguments']['field_s_subchapter_number_value']['relationship'] = 'field_hbp_parent_subchapter_target_id';
+  $handler->display->display_options['arguments']['field_s_subchapter_number_value']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_s_subchapter_number_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_s_subchapter_number_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_s_subchapter_number_value']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'stanford_handbook_page' => 'stanford_handbook_page',
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'print-handbook-pages';
+  $export['stanford_handbook_print_handbook_pages'] = $view;
+
+  $view = new view();
   $view->name = 'stanford_handbook_subchapters';
   $view->description = 'List View of Subchapter nodes in numerical order';
   $view->tag = 'stanford_handbook';

@@ -1,0 +1,71 @@
+@page {
+    size: auto;   /* auto is the initial value */
+    /* this affects the margin in the printer settings */
+    margin: 23mm 23mm 23mm 23mm;
+}
+body {
+    font-size: 12pt;
+    margin: 6mm;
+}
+#main a:link:after, #main a:visited:after {
+    content:" [" attr(href) "] ";
+    font-size: 80%;
+    text-decoration:underline;
+    text-transform:none;
+}
+#global-header, #global-footer, #sidebar-first, #footer, #breadcrumb, #block-custom-pagers-1, #block-print-print-links, ul.nav-tabs, .alert, #toc, .back-to-top, #block-views-chapter-image-block, .field-name-field-chapter-image, .print-breadcrumb {
+    display: none;
+}
+#content, #sidebar-second, #header, #header .span8, .block {
+    width:100%;
+    margin:0px;
+    float:none;
+}
+#header {
+    margin-bottom:10mm;
+}
+#content, .well {
+    border-bottom: 1px solid black;
+    margin-left:0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+body:after, .print-content:after {
+    font-weight:bold;
+    font-size:12pt;
+    display:block;
+    border-top:1px solid black;
+    margin-top:10mm;
+}
+.content h2, .content h3, .content h4, .content h5, .content h6, #content-body .content h2:first-child, #content-body .content h3:first-child, #content-body .content h4:first-child {
+    margin-top:5mm;
+}
+.print-logo img {
+    border-right: 1px solid black;
+    margin-bottom: -2px;
+    padding-right: 10px;
+}
+.print-content .field-last-updated-on-prefix {
+    display: inline-block;
+    float:left;
+    font-weight:bold;
+    margin-right: 5px;
+}
+.print-content .node-policy-document > h2 {
+    font-size: 24pt;
+}
+table td h4, table td h3, table td h2, table td h5 {
+    margin:0px;
+}
+table td {
+    padding:2mm;
+}
+
+/* print the guide pages */
+.page-stanford-handbook-print-handbook-pages .view-stanford-handbook-print-handbook-pages .views-row .node {
+    page-break-before: always;
+}
+.page-stanford-handbook-print-handbook-pages .view-stanford-handbook-print-handbook-pages .views-row.views-row-first .node {
+    page-break-before: avoid;
+}
