@@ -29,7 +29,7 @@ function stanford_handbook_install() {
         'args' => '',
         'position' => 'block',
         'visibility_php' => '',
-        'node_type' => 'handbook_page',
+        'node_type' => 'stanford_handbook_page',
         'reverse_list' => 0,
       ))
       ->execute();
