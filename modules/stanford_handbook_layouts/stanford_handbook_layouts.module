@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Stanford Handbook Layouts feature.
+ */
+
+include_once 'stanford_handbook_layouts.features.inc';
