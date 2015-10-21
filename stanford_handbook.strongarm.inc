@@ -167,9 +167,6 @@ function stanford_handbook_strongarm() {
         'path' => array(
           'weight' => '30',
         ),
-        'workbench_access' => array(
-          'weight' => '0',
-        ),
       ),
       'display' => array(),
     ),
@@ -214,9 +211,6 @@ function stanford_handbook_strongarm() {
         ),
         'path' => array(
           'weight' => '5',
-        ),
-        'workbench_access' => array(
-          'weight' => '1',
         ),
       ),
       'display' => array(),
