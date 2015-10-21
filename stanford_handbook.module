@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Code for the Policies feature.
+ * Code for the Stanford Handbook feature.
  */
 
 include_once 'stanford_handbook.features.inc';
