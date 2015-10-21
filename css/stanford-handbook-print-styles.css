@@ -63,9 +63,9 @@ table td {
 }
 
 /* print the guide pages */
-.page-stanford-handbook-print-handbook-pages .view-stanford-handbook-print-handbook-pages .views-row .node {
+.page-print-handbook-pages .view-stanford-handbook-print-handbook-pages .views-row .node {
     page-break-before: always;
 }
-.page-stanford-handbook-print-handbook-pages .view-stanford-handbook-print-handbook-pages .views-row.views-row-first .node {
+.page-print-handbook-pages .view-stanford-handbook-print-handbook-pages .views-row.views-row-first .node {
     page-break-before: avoid;
 }
