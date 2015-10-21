@@ -9,15 +9,19 @@
  *
  */
 function stanford_handbook_install() {
+  //Checking to make sure custom_pagers exists
   if (module_exists('custom_pagers')) {
     $q = db_select('custom_pager', 'cp');
     $q->addField('cp', 'pid');
     $q->condition('view', 'stanford_handbook_page_previous_next', '=');
     $q->condition('position', 'block', '=');
     $r = $q->execute()->fetchObject();
+    //Grabbing the pid of the custom pager record if set,
+    //otherwise assigning as first record.
     $r = is_null($r->pid) ? 1 : $r->pid;
 
-    // Populate the default {custom_pager} record.
+    //Populate the default {custom_pager} record.
+    //Using db_merge in case the pager has already been set.
     db_merge('custom_pager')
       ->key(array(
         'pid' => $r
