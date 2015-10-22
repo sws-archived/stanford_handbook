@@ -352,6 +352,8 @@ function stanford_handbook_views_default_views() {
 
   /* Display: Chapter Image Block */
   $handler = $view->new_display('block', 'Chapter Image Block', 'chapter_image_block');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Chapter Image';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_s_parent_chapter_target_id']['id'] = 'field_s_parent_chapter_target_id';
