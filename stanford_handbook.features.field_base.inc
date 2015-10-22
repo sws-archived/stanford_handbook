@@ -279,7 +279,7 @@ function stanford_handbook_field_default_field_bases() {
           'type' => 'property',
         ),
         'target_bundles' => array(
-          'handbook_page' => 'handbook_page',
+          'stanford_handbook_page' => 'stanford_handbook_page',
         ),
       ),
       'target_type' => 'node',
