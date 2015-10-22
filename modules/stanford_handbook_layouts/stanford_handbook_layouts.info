@@ -12,6 +12,7 @@ dependencies[] = stanford_handbook
 dependencies[] = strongarm
 features[context][] = handbook_page
 features[context][] = handbook_subchapter
+features[context][] = handbook_chapter
 features[ctools][] = context:context:3
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
