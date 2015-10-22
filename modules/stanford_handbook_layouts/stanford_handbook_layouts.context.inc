@@ -29,6 +29,18 @@ function stanford_handbook_layouts_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'custom_pagers-1' => array(
+          'module' => 'custom_pagers',
+          'delta' => '1',
+          'region' => 'highlighted',
+          'weight' => '-10',
+        ),
+        'views-stanford_handbook_pages-chp_img' => array(
+          'module' => 'views',
+          'delta' => 'stanford_handbook_pages-chp_img',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
         'print_ui-print-links' => array(
           'module' => 'print_ui',
           'delta' => 'print-links',
@@ -40,12 +52,6 @@ function stanford_handbook_layouts_context_default_contexts() {
           'delta' => 'authority_and_related',
           'region' => 'sidebar_second',
           'weight' => '-9',
-        ),
-        'custom_pagers-1' => array(
-          'module' => 'custom_pagers',
-          'delta' => '1',
-          'region' => 'highlighted',
-          'weight' => '-10',
         ),
       ),
     ),
