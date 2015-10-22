@@ -1037,7 +1037,7 @@ function stanford_handbook_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_hbp_related',
-    'label' => 'Related Policies',
+    'label' => 'Related Pages',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -1474,7 +1474,7 @@ function stanford_handbook_field_default_field_instances() {
   t('Parent Chapter');
   t('Parent Handbook');
   t('Parent Subchapter');
-  t('Related Policies');
+  t('Related Pages');
   t('Subchapter Number');
   t('Subchapter Summary');
   t('Subchapter Title');
