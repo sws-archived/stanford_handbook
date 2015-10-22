@@ -20,22 +20,20 @@ function stanford_handbook_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_hbp_title',
-        1 => 'body',
-        2 => 'field_hbp_subsection',
-        4 => 'field_hbp_applicability',
-        5 => 'field_hbp_original_issue',
-        6 => 'field_hbp_attachments',
-        7 => 'field_hbp_footnote',
+        0 => 'body',
+        1 => 'field_hbp_subsection',
+        3 => 'field_hbp_applicability',
+        4 => 'field_hbp_original_issue',
+        5 => 'field_hbp_attachments',
+        6 => 'field_hbp_footnote',
       ),
       'authority_and_related' => array(
-        3 => 'field_hbp_authority',
-        8 => 'field_hbp_related',
-        9 => 'field_hbp_categories',
+        2 => 'field_hbp_authority',
+        7 => 'field_hbp_related',
+        8 => 'field_hbp_categories',
       ),
     ),
     'fields' => array(
-      'field_hbp_title' => 'ds_content',
       'body' => 'ds_content',
       'field_hbp_subsection' => 'ds_content',
       'field_hbp_authority' => 'authority_and_related',

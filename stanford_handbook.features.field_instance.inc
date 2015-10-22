@@ -1181,9 +1181,8 @@ function stanford_handbook_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'search_index' => array(
