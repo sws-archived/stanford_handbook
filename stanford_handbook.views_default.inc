@@ -312,7 +312,6 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_hbp_parent_subchapter_target_id';
   $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
@@ -350,6 +349,45 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+
+  /* Display: Chapter Image Block */
+  $handler = $view->new_display('block', 'Chapter Image Block', 'chapter_image_block');
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_s_parent_chapter_target_id']['id'] = 'field_s_parent_chapter_target_id';
+  $handler->display->display_options['relationships']['field_s_parent_chapter_target_id']['table'] = 'field_data_field_s_parent_chapter';
+  $handler->display->display_options['relationships']['field_s_parent_chapter_target_id']['field'] = 'field_s_parent_chapter_target_id';
+  $handler->display->display_options['relationships']['field_s_parent_chapter_target_id']['label'] = 'Parent chapter';
+  $handler->display->display_options['relationships']['field_s_parent_chapter_target_id']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_s_chapter_image']['id'] = 'field_s_chapter_image';
+  $handler->display->display_options['fields']['field_s_chapter_image']['table'] = 'field_data_field_s_chapter_image';
+  $handler->display->display_options['fields']['field_s_chapter_image']['field'] = 'field_s_chapter_image';
+  $handler->display->display_options['fields']['field_s_chapter_image']['relationship'] = 'field_s_parent_chapter_target_id';
+  $handler->display->display_options['fields']['field_s_chapter_image']['label'] = '';
+  $handler->display->display_options['fields']['field_s_chapter_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_s_chapter_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_s_chapter_image']['settings'] = array(
+    'image_style' => 'medium',
+    'image_link' => '',
+  );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
+    'stanford_handbook_page' => 'stanford_handbook_page',
+  );
   $export['stanford_handbook_pages'] = $view;
 
   $view = new view();
