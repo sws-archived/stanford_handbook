@@ -5,6 +5,9 @@
  */
 Drupal.behaviors.stanford_handbook = {
   attach: function (context, settings) {
+    
+ 	$('.accordion-body').removeClass('in');
+  $('.accordion-heading').removeClass('hidden');
 
   var toggles = $(".collapse-toggle", context);
   var contents = $("div.collapse", context);
