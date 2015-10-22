@@ -64,5 +64,41 @@ function stanford_handbook_layouts_context_default_contexts() {
   t('Handbook');
   $export['handbook_page'] = $context;
 
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'handbook_subchapter';
+  $context->description = 'Block(s) on the Handbook Subchapter node';
+  $context->tag = 'Handbook';
+  $context->conditions = array(
+    'node' => array(
+      'values' => array(
+        'stanford_subchapter' => 'stanford_subchapter',
+      ),
+      'options' => array(
+        'node_form' => '0',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-stanford_handbook_pages-chp_img' => array(
+          'module' => 'views',
+          'delta' => 'stanford_handbook_pages-chp_img',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+// Translatables
+// Included for use with string extractors like potx.
+  t('Block(s) on the Handbook Subchapter node');
+  t('Handbook');
+  $export['handbook_subchapter'] = $context;
+
   return $export;
 }
