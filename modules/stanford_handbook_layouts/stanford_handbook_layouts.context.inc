@@ -122,7 +122,7 @@ function stanford_handbook_layouts_context_default_contexts() {
         'views-b0666971d2f61970bab7cd33ec319269' => array(
           'module' => 'views',
           'delta' => 'b0666971d2f61970bab7cd33ec319269',
-          'region' => 'content',
+          'region' => 'content_lower',
           'weight' => '-10',
         ),
       ),
