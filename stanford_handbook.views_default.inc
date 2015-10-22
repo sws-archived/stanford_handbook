@@ -351,7 +351,7 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
 
   /* Display: Chapter Image Block */
-  $handler = $view->new_display('block', 'Chapter Image Block', 'chapter_image_block');
+  $handler = $view->new_display('block', 'Chapter Image Block', 'chp_img');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Chapter Image';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
