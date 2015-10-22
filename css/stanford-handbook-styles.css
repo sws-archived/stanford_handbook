@@ -1,0 +1,157 @@
+/* Theme Fixes Injector */
+/* Styles to move to OFW */
+
+/* Styles to move to SUFW */
+#sidebar-first .block-menu ul.menu ul.menu li.last a {border-bottom:none;}
+#sidebar-first .block-menu ul.menu li ul li a, #sidebar-first .block-menu-block ul.menu li ul li a {padding: 3px 15px;}
+
+/* Styles to move to Wilbur */
+.breadcrumb .breadcrumb {margin:0px; padding:0; color: #595855;} /* this is a hack. See issue in OFW for nested breadcrumb style */
+/* Search results - moved to Wilbur */
+ol.search-results {margin-left:0;  border-top: 1px solid #E5E5E5; padding-top: 1em;}
+ol.search-results li { border-bottom: 1px solid #E5E5E5; }
+
+/* Search Box Styles! Need to fix - see github issue */
+#block-dor-policies-adminguide-frontpage-search #search-block-form input.search-query {
+    border: 4px solid #C5BEAE;
+    border-radius: 6px 6px 6px 6px;
+    color: #827252;
+    padding-left: 10px;
+    padding-right: 33px;
+display: inline-block;
+    float: left;
+width: 77%;
+max-width: 77%;
+}
+#block-dor-policies-adminguide-frontpage-search #search-block-form .btn-search {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    height: 26px;
+   display:inline-block;
+    width: 26px;
+margin-left: -35px;
+    margin-top: 4px;
+}
+#block-dor-policies-adminguide-frontpage-search #search-block-form input.btn-search:hover {
+    opacity: 0.6;
+}
+#block-dor-policies-adminguide-frontpage-search p {font-size: 12px; line-height: 1.2em; letter-spacing: 0em;} 
+#block-dor-policies-adminguide-frontpage-search form {margin-bottom:10px;}
+
+@media (max-width: 1199px) {
+#block-dor-policies-adminguide-frontpage-search #search-block-form input.search-query { width: 65%; max-width: 65%; }
+}
+@media (max-width: 979px) {
+#block-dor-policies-adminguide-frontpage-search #search-block-form input.search-query { width:80%; max-width: 80%; }
+}
+@media (max-width: 767px) {
+.site-sidebar-second .block.well {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+}
+@media (max-width: 540px) { 
+}
+
+/* Theme Fixes Injector END */
+
+/* Policy Node and Chapter Image Styles Injector */
+
+/* Share icons */
+#block-print-ui-print-links .print_html, #block-print-ui-print-links .print_mail, #block-print-ui-print-links .print_pdf {margin-left:0;}
+#block-print-ui-print-links .print_html a, #block-print-ui-print-links .print_mail a, #block-print-ui-print-links .print_pdf a { 
+background-image: url('https://sites.stanford.edu/adminguide/sites/default/files/share-icon-print.png');
+height: 32px;
+background-position: left top;
+background-repeat: no-repeat;
+padding-left: 43px;
+padding-top: 10px;
+display: block; }
+#block-print-ui-print-links .print_html a:hover, #block-print-ui-print-links .print_mail a:hover, #block-print-ui-print-links .print_pdf a:hover { text-decoration:underline; opacity: .8; color: black; }
+#block-print-ui-print-links .print_mail a {background-image: url('https://sites.stanford.edu/adminguide/sites/default/files/share-icon-email.png');}
+#block-print-ui-print-links .print_pdf a {background-image: url('https://sites.stanford.edu/adminguide/sites/default/files/share-icon-pdf.png');}
+#block-print-ui-print-links .print_mail a:after { content: " this Policy"; }
+#block-print-ui-print-links .print_pdf a:before { content: "Download as "; }
+#block-print-ui-print-links .print_html a:after { content: " this Policy"; }
+.page-print-policies #block-print-ui-print-links .print_mail a:after { content: " this Page"; }
+.page-print-policies #block-print-ui-print-links .print_html a:after { content: " this Page"; }
+.page-print-policies .breadcrumb {display:none;}
+
+/* Email this policy page */
+#print-mail-form #edit-fld-subject {width:80%;}
+#print-mail-form #edit-fld-title {font-size: 16px; font-weight: 600;}
+#print-mail-form input.form-submit {margin-right:10px;}
+
+/* Previous Next */
+#block-custom-pagers-1 { background-color: #F2F1EB; border-top:1px solid #D5D2C5; border-bottom:1px solid #D5D2C5; padding:12px; }
+#block-custom-pagers-1 .previous a, #block-custom-pagers-1 .next a { background-color: #FFFFFF; border: 1px solid #D5D2C5; border-radius: 20px 4px 4px 20px; padding: 3px 10px; display:inline-block; width:70px;}
+#block-custom-pagers-1 .key { display:none;}
+#block-custom-pagers-1 .next a {border-radius: 4px 20px 20px 4px;}
+#block-custom-pagers-1 ul.custom-pager li.next {float: right;}
+#block-custom-pagers-1 .previous a:hover, #block-custom-pagers-1 .next a:hover {color:white; background-color: #8c1515;}
+
+/* Policy nodes and chapter images */
+#block-views-chapter-image-block, .field-name-field-chapter-image { float:right; }
+#block-views-chapter-image-block img, .field-name-field-chapter-image img {margin-left:15px; margin-bottom:10px; -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px;}
+.field-name-field-policy-former-number.clearfix:after { clear: left; }
+.node-type-policy-document .field-type-text-with-summary {margin-top:20px;}
+.field-name-field-policy-current-version { display:inline-block;}
+.field-last-updated-on-prefix {display:inline-block; font-weight:600;}
+p.back-to-top {margin-top: 10px;}
+#toc li {list-style-type:none; list-style-image: none;}
+
+/* fix for h2 first child */
+#content-body .content .node-policy-document h2:first-child, #content-body .content .node-policy-document h3:first-child, #content-body .content .node-policy-document h4:first-child {margin-top:0.5em;}
+
+@media (min-width: 481px) and (max-width: 767px) { 
+#block-views-chapter-image-block, .field-name-field-chapter-image { width:auto; }
+}
+@media (max-width: 480px) {
+#block-views-chapter-image-block, .field-name-field-chapter-image { width:25%; margin-bottom: 0px; margin-left:10px; }
+#block-views-chapter-image-block img, .field-name-field-chapter-image img {margin-left:0px;}
+h1 {font-size:28px;}
+}
+
+/* Policy Node and Chapter Image Styles Injector END */
+
+/* Chapter Subchapter Views Styles */
+
+/* Views rows */
+.view-stanford-handbook-pages.view-id-stanford_handbook_pages .views-row,
+.view-stanford-handbook-pages.view-id-stanford_handbook_pages .views-row-last,
+.view-policy-subchapter-listing.view-id-policy_subchapter_listing .views-row,
+.view-policy-subchapter-listing.view-id-policy_subchapter_listing .views-row-last,
+.view-id-policy_chapters.view-display-id-block_1 .views-row,
+.view-id-policy_chapters.view-display-id-block_1 .views-row-last,
+.view-stanford-handbook-pages.view-id-stanford_handbook_pages .views-row-first,
+.view-policy-subchapter-listing.view-id-policy_subchapter_listing .views-row-first,
+.view-id-policy_chapters.view-display-id-block_1 .views-row-first {
+   border-top: 1px solid #ddd;
+   padding-top: 12px;
+}
+.view-stanford-handbook-pages.view-id-stanford_handbook_pages .views-row-last, .view-policy-subchapter-listing.view-id-policy_subchapter_listing .views-row-last, .view-id-policy_chapters.view-display-id-block_1 .views-row-last {border-bottom: 1px solid #ddd;}
+.view-stanford-handbook-pages.view-id-stanford_handbook_pages .views-row-last {padding-bottom:12px;}
+
+/* Accordion styles */
+.accordion .view-stanford-handbook-pages.view-id-stanford_handbook_pages .views-row, .accordion .view-policy-subchapters.view-id-policy_subchapters .views-row {border:none !important;  margin: 0; padding: 0;}
+.accordion-group, .accordion-inner {border:none;}
+.accordion-group {margin-top: 10px;}
+.accordion .btn:before {content: "Hide";}
+.accordion .btn.collapsed:before { content: "View"; }
+
+/* Chapter thumbnails */
+.view-policy-chapters.view-id-policy_chapters img {-webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px;}
+
+/* Fix wrapping of subchapter and policy views */
+.node-type-policy-subchapter #block-system-main.clearfix:after, .node-type-policy-subchapter #block-system-main.clearfix:before, .node-type-policy-subchapter .node.clearfix:before, .node-type-policy-subchapter .node.clearfix:after, .view-stanford-handbook-pages.view-id-stanford_handbook_pages .views-row,
+.node-type-policy-section #block-system-main.clearfix:after, .node-type-policy-section #block-system-main.clearfix:before, .node-type-policy-section .node.clearfix:before, .node-type-policy-section .node.clearfix:after, .node-type-policy-section .view-policy-subchapter-listing .views-row {clear:none !important;}
+.node-type-policy-subchapter #block-views-policy-documents-block-1, .node-type-policy-section #block-views-c518dfaf84236a7bb956c27cc7327fc7 {max-width: 670px;}
+
+@media (max-width: 1199px) {
+.node-type-policy-subchapter #block-views-policy-documents-block-1, .node-type-policy-section #block-views-c518dfaf84236a7bb956c27cc7327fc7 {max-width: 510px;}
+}
+@media (max-width: 979px) {
+.node-type-policy-subchapter #block-views-policy-documents-block-1, .node-type-policy-section #block-views-c518dfaf84236a7bb956c27cc7327fc7 {max-width: 100%; z-index:-10;}
+}
+@media (max-width: 767px) { 
+
+}
+
+/* Chapter Subchapter Views Styles END */
