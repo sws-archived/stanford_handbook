@@ -18,7 +18,12 @@ function stanford_handbook_install() {
     $r = $q->execute()->fetchObject();
     //Grabbing the pid of the custom pager record if set,
     //otherwise assigning as first record.
-    $r = is_null($r->pid) ? 1 : $r->pid;
+    if (is_null($r->pid)) {
+      $r = 1;
+    }
+    else {
+     $r = $r->pid;
+    }
 
     //Populate the default {custom_pager} record.
     //Using db_merge in case the pager has already been set.
