@@ -22,7 +22,7 @@ function stanford_handbook_install() {
       $r = 1;
     }
     else {
-     $r = $r->pid;
+      $r = $r->pid;
     }
 
     //Populate the default {custom_pager} record.
