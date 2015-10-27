@@ -1,13 +1,101 @@
 /* Theme Fixes Injector */
-/* Styles to move to OFW */
 
-/* Styles to move to SUFW */
-#sidebar-first .block-menu ul.menu ul.menu li.last a {
-  border-bottom:none;
+.stanford-handbook #sidebar-first .block-menu,
+.stanford-handbook #sidebar-first .block-menu-block {
+  text-transform: uppercase;
 }
-#sidebar-first .block-menu ul.menu li ul li a,
-#sidebar-first .block-menu-block ul.menu li ul li a {
+
+.stanford-handbook #sidebar-first .block-menu h2,
+.stanford-handbook #sidebar-first .block-menu-block h2 {
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+  padding: 5px 0 15px;
+}
+
+.stanford-handbook #sidebar-first .block-menu ul.menu,
+.stanford-handbook #sidebar-first .block-menu-block ul.menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stanford-handbook #sidebar-first .block-menu ul.menu li,
+.stanford-handbook #sidebar-first .block-menu-block ul.menu li {
+  margin: 0;
+  list-style: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0;
+}
+
+.stanford-handbook #sidebar-first .block-menu ul.menu li a,
+.stanford-handbook #sidebar-first .block-menu-block ul.menu li a {
+  display: block;
+  border-top: 1px solid #e9e6df;
+  padding: 12px 0 12px 15px;
+  color: #736C51;
+}
+
+.stanford-handbook #sidebar-first .block-menu ul.menu:first-child > li.last,
+.stanford-handbook #sidebar-first .block-menu-block ul.menu:first-child > li.last {
+  border-bottom: 1px solid #e9e6df;
+}
+
+.stanford-handbook #sidebar-first .block-menu ul.menu li a:hover,
+.stanford-handbook #sidebar-first .block-menu ul.menu li a:focus,
+.stanford-handbook #sidebar-first .block-menu ul.menu a.active-trail,
+.stanford-handbook #sidebar-first .block-menu-block ul.menu li a:hover,
+.stanford-handbook #sidebar-first .block-menu-block ul.menu li a:focus,
+.stanford-handbook #sidebar-first .block-menu-block ul.menu a.active-trail {
+  background-color: #fff;
+  color: #2E2D29;
+}
+
+.stanford-handbook #sidebar-first .block-menu ul.menu li.active-trail ul,
+.stanford-handbook #sidebar-first .block-menu-block ul.menu li.active-trail ul {
+  background-color: #fff;
+}
+
+.stanford-handbook #sidebar-first .block-menu ul.menu li ul,
+.stanford-handbook #sidebar-first .block-menu-block ul.menu li ul {
+  padding: 0 0 0 15px;
+}
+
+.stanford-handbook #sidebar-first .block-menu ul.menu li ul li a,
+.stanford-handbook #sidebar-first .block-menu-block ul.menu li ul li a {
+  border: medium none;
+  font-weight: normal;
   padding: 3px 15px;
+  text-transform: none;
+}
+
+.stanford-handbook #sidebar-first .block-menu ul.menu li ul li a:hover,
+.stanford-handbook #sidebar-first .block-menu ul.menu li ul li a:focus,
+.stanford-handbook #sidebar-first .block-menu ul.menu li ul li a.active-trail,
+.stanford-handbook #sidebar-first .block-menu-block ul.menu li ul li a:hover,
+.stanford-handbook #sidebar-first .block-menu-block ul.menu li ul li a:focus,
+.stanford-handbook #sidebar-first .block-menu-block ul.menu li ul li a.active-trail {
+  color: #2e2d29;
+}
+
+.stanford-handbook #sidebar-first .block-menu > h2 a,
+.stanford-handbook #sidebar-first .block-menu-block > h2 a {
+  color: #736C51;
+}
+
+.stanford-handbook #sidebar-first .block-menu > h2 a:hover,
+.stanford-handbook #sidebar-first .block-menu-block > h2 a:hover,
+.stanford-handbook #sidebar-first .block-menu > h2 a:focus,
+.stanford-handbook #sidebar-first .block-menu-block > h2 a:focus {
+  color: #2E2D29;
+}
+
+.stanford-handbook #sidebar-first .block-menu-block .content > .nav > li.expanded > ul,
+.stanford-handbook #sidebar-first .block-menu .content > .nav > li.expanded > ul {
+  padding-bottom: 1em;
 }
 
 /* Styles to move to Wilbur */
@@ -30,7 +118,14 @@ ol.search-results li {
 /* Theme Fixes Injector END */
 
 /* Policy Node and Chapter Image Styles Injector */
-
+#sidebar-second #block-print-ui-print-links {
+  border: none;
+  box-shadow: none;
+  border-radius: 0px;
+  border-bottom: 1px solid #d5d2c5;
+  background: #f2f1eb;
+  padding: 10px 25px 20px 25px;
+}
 /* Share icons */
 #block-print-ui-print-links .print_html,
 #block-print-ui-print-links .print_mail,
@@ -208,26 +303,28 @@ h1 {
 }
 
 /* Accordion styles */
-.accordion .view-stanford-handbook-pages.view-id-stanford_handbook_pages .views-row,
-.accordion .view-policy-subchapters.view-id-policy_subchapters .views-row {
-  border:none !important;  margin: 0; padding: 0;
+.stanford-handbook .accordion .view-stanford-handbook-pages.view-id-stanford_handbook_pages .views-row,
+.stanford-handbook .accordion .view-stanford-handbook-subchapters.view-id-stanford_handbook_subchapters .views-row {
+  border: none !important;
+  margin: 0;
+  padding: 0;
 }
-.accordion-group,
-.accordion-inner {
+.stanford-handbook .accordion-group,
+.stanford-handbook .accordion-inner {
   border:none;
 }
-.accordion-group {
+.stanford-handbook .accordion-group {
   margin-top: 10px;
 }
-.accordion .btn:before {
+.stanford-handbook .accordion .btn:before {
   content: "Hide";
 }
-.accordion .btn.collapsed:before {
+.stanford-handbook .accordion .btn.collapsed:before {
   content: "View";
 }
 
 /* Chapter thumbnails */
-.view-policy-chapters.view-id-policy_chapters img {
+.view-stanford-handbook-chapters.view-id-stanford_handbook_chapters img {
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
