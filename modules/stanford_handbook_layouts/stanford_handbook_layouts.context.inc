@@ -49,6 +49,42 @@ function stanford_handbook_layouts_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'handbook_chapters';
+  $context->description = 'Blocks on the Handbook node';
+  $context->tag = 'Handbook';
+  $context->conditions = array(
+    'node' => array(
+      'values' => array(
+        'stanford_handbook' => 'stanford_handbook',
+      ),
+      'options' => array(
+        'node_form' => '1',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-891cc1e640303a3f615ae268e6142d10' => array(
+          'module' => 'views',
+          'delta' => '891cc1e640303a3f615ae268e6142d10',
+          'region' => 'content_lower',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+  $export['handbook_chapters'] = $context;
+
+// Translatables
+// Included for use with string extractors like potx.
+  t('Blocks on the Handbook node');
+  t('Handbook');
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'handbook_page';
   $context->description = 'Blocks on the Handbook Page node';
   $context->tag = 'Handbook';

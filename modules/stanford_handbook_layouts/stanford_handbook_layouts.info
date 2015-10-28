@@ -10,6 +10,7 @@ dependencies[] = print_ui
 dependencies[] = stanford_handbook
 dependencies[] = strongarm
 features[context][] = handbook_chapter
+features[context][] = handbook_chapters
 features[context][] = handbook_page
 features[context][] = handbook_subchapter
 features[context][] = sitewide_handbook
