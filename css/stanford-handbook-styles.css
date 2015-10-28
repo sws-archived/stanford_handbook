@@ -157,13 +157,13 @@ ol.search-results li {
   background-image: url('../img/share-icon-pdf.png');
 }
 #block-print-ui-print-links .print_mail a:after {
-  content: " this Policy";
+  content: " this Page";
 }
 #block-print-ui-print-links .print_pdf a:before {
   content: "Download as ";
 }
 #block-print-ui-print-links .print_html a:after {
-  content: " this Policy";
+  content: " this Page";
 }
 .page-print-policies #block-print-ui-print-links .print_mail a:after {
   content: " this Page";
