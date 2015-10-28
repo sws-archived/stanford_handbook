@@ -20,15 +20,6 @@ function stanford_handbook_layouts_block_view_custom_pagers_1_alter(&$data, $blo
  * @param $data The data as returned from the hook_block_view() implementation of the module that defined the block.
  * @param $block The block object, as loaded from the database.
  */
-function stanford_handbook_layouts_block_view_ds_extras_authority_and_related_alter(&$data, $block) {
-  $data['subject'] = "<none>";
-}
-
-/**
- * Implements hook_block_view_MODULE_DELTA_alter().
- * @param $data The data as returned from the hook_block_view() implementation of the module that defined the block.
- * @param $block The block object, as loaded from the database.
- */
 function stanford_handbook_layouts_block_view_views_stanford_handbook_pages_chp_img_alter(&$data, $block) {
   $data['subject'] = "<none>";
 }
