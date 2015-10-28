@@ -271,9 +271,10 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['fields']['field_hbp_related']['label'] = '';
   $handler->display->display_options['fields']['field_hbp_related']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_hbp_related']['settings'] = array(
-    'link' => 0,
+    'link' => 1,
   );
   $handler->display->display_options['fields']['field_hbp_related']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_hbp_related']['multi_type'] = 'ul';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -300,6 +301,12 @@ function stanford_handbook_views_default_views() {
   $handler = $view->new_display('block', 'Categories', 'block_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Categories';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Category(ies) */
   $handler->display->display_options['fields']['field_hbp_categories']['id'] = 'field_hbp_categories';
@@ -307,7 +314,9 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['fields']['field_hbp_categories']['field'] = 'field_hbp_categories';
   $handler->display->display_options['fields']['field_hbp_categories']['label'] = '';
   $handler->display->display_options['fields']['field_hbp_categories']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_hbp_categories']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_hbp_categories']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_hbp_categories']['multi_type'] = 'ul';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
