@@ -12,6 +12,7 @@ dependencies[] = strongarm
 features[context][] = handbook_chapter
 features[context][] = handbook_chapters
 features[context][] = handbook_page
+features[context][] = handbook_print
 features[context][] = handbook_subchapter
 features[context][] = sitewide_handbook
 features[ctools][] = context:context:3

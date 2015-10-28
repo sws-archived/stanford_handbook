@@ -151,6 +151,40 @@ function stanford_handbook_layouts_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'handbook_print';
+  $context->description = 'Print block on the Print Views';
+  $context->tag = 'Handbook';
+  $context->conditions = array(
+    'views' => array(
+      'values' => array(
+        'stanford_handbook_print_handbook_pages:page' => 'stanford_handbook_print_handbook_pages:page',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'print_ui-print-links' => array(
+          'module' => 'print_ui',
+          'delta' => 'print-links',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+// Translatables
+// Included for use with string extractors like potx.
+  t('Handbook');
+  t('Print block on the Print Views');
+  $export['handbook_print'] = $context;
+
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'handbook_subchapter';
   $context->description = 'Block(s) on the Handbook Subchapter node';
   $context->tag = 'Handbook';
