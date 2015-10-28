@@ -160,15 +160,10 @@ function stanford_handbook_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'time';
-  $handler->display->display_options['cache']['results_lifespan'] = '3600';
-  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
-  $handler->display->display_options['cache']['output_lifespan'] = '3600';
-  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Content: Title */
@@ -218,6 +213,27 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['fields']['field_hbp_authority']['field'] = 'field_hbp_authority';
   $handler->display->display_options['fields']['field_hbp_authority']['label'] = '';
   $handler->display->display_options['fields']['field_hbp_authority']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'stanford_handbook_page' => 'stanford_handbook_page',
+  );
+  /* Filter criterion: Content: Authority (field_hbp_authority) */
+  $handler->display->display_options['filters']['field_hbp_authority_value']['id'] = 'field_hbp_authority_value';
+  $handler->display->display_options['filters']['field_hbp_authority_value']['table'] = 'field_data_field_hbp_authority';
+  $handler->display->display_options['filters']['field_hbp_authority_value']['field'] = 'field_hbp_authority_value';
+  $handler->display->display_options['filters']['field_hbp_authority_value']['operator'] = 'not empty';
 
   /* Display: Related Pages */
   $handler = $view->new_display('block', 'Related Pages', 'block_2');
@@ -231,10 +247,30 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['fields']['field_hbp_related']['label'] = '';
   $handler->display->display_options['fields']['field_hbp_related']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_hbp_related']['settings'] = array(
-    'link' => 1,
+    'link' => 0,
   );
   $handler->display->display_options['fields']['field_hbp_related']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_hbp_related']['multi_type'] = 'ul';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'stanford_handbook_page' => 'stanford_handbook_page',
+  );
+  /* Filter criterion: Content: Related Pages (field_hbp_related) */
+  $handler->display->display_options['filters']['field_hbp_related_target_id']['id'] = 'field_hbp_related_target_id';
+  $handler->display->display_options['filters']['field_hbp_related_target_id']['table'] = 'field_data_field_hbp_related';
+  $handler->display->display_options['filters']['field_hbp_related_target_id']['field'] = 'field_hbp_related_target_id';
+  $handler->display->display_options['filters']['field_hbp_related_target_id']['operator'] = 'not empty';
 
   /* Display: Categories */
   $handler = $view->new_display('block', 'Categories', 'block_3');
@@ -248,7 +284,29 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['fields']['field_hbp_categories']['label'] = '';
   $handler->display->display_options['fields']['field_hbp_categories']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_hbp_categories']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_hbp_categories']['multi_type'] = 'ul';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'stanford_handbook_page' => 'stanford_handbook_page',
+  );
+  /* Filter criterion: Content: Category(ies) (field_hbp_categories) */
+  $handler->display->display_options['filters']['field_hbp_categories_tid']['id'] = 'field_hbp_categories_tid';
+  $handler->display->display_options['filters']['field_hbp_categories_tid']['table'] = 'field_data_field_hbp_categories';
+  $handler->display->display_options['filters']['field_hbp_categories_tid']['field'] = 'field_hbp_categories_tid';
+  $handler->display->display_options['filters']['field_hbp_categories_tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_hbp_categories_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_hbp_categories_tid']['vocabulary'] = 'category';
   $export['stanford_handbook_field_blocks'] = $view;
 
   $view = new view();
