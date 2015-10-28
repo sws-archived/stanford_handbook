@@ -97,25 +97,6 @@ function stanford_handbook_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'ds_extras_region_blocks';
-  $strongarm->value = array(
-    'authority_and_related' => array(
-      'title' => 'Authority, Related Pages, and Categories',
-      'info' => 'node_stanford_handbook_page_full',
-    ),
-  );
-  $export['ds_extras_region_blocks'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'ds_extras_region_to_block';
-  $strongarm->value = 1;
-  $export['ds_extras_region_to_block'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__stanford_chapter';
   $strongarm->value = array(
     'view_modes' => array(

@@ -83,12 +83,6 @@ function stanford_handbook_layouts_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
-        'ds_extras-authority_and_related' => array(
-          'module' => 'ds_extras',
-          'delta' => 'authority_and_related',
-          'region' => 'sidebar_second',
-          'weight' => '-9',
-        ),
       ),
     ),
   );
