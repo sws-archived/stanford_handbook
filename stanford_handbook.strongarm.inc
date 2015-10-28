@@ -254,7 +254,9 @@ function stanford_handbook_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_stanford_chapter';
-  $strongarm->value = array();
+  $strongarm->value = array(
+    0 => 'main-menu',
+  );
   $export['menu_options_stanford_chapter'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -277,7 +279,9 @@ function stanford_handbook_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_stanford_subchapter';
-  $strongarm->value = array();
+  $strongarm->value = array(
+    0 => 'main-menu',
+  );
   $export['menu_options_stanford_subchapter'] = $strongarm;
 
   $strongarm = new stdClass();
