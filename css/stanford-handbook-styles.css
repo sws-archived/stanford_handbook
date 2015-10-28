@@ -118,7 +118,8 @@ ol.search-results li {
 /* Theme Fixes Injector END */
 
 /* Policy Node and Chapter Image Styles Injector */
-#sidebar-second #block-print-ui-print-links {
+#sidebar-second #block-print-ui-print-links,
+#sidebar-second .block-views {
   border: none;
   box-shadow: none;
   border-radius: 0px;

@@ -83,6 +83,24 @@ function stanford_handbook_layouts_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
+        'views-e8c4bb8666dd78e1d2caa66beb0f3b4a' => array(
+          'module' => 'views',
+          'delta' => 'e8c4bb8666dd78e1d2caa66beb0f3b4a',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
+        ),
+        'views-a53a97f898b2d9f49f71889a500c7075' => array(
+          'module' => 'views',
+          'delta' => 'a53a97f898b2d9f49f71889a500c7075',
+          'region' => 'sidebar_second',
+          'weight' => '-8',
+        ),
+        'views-c609fed5c622b814d8cd74fb156c25e3' => array(
+          'module' => 'views',
+          'delta' => 'c609fed5c622b814d8cd74fb156c25e3',
+          'region' => 'sidebar_second',
+          'weight' => '-7',
+        ),
       ),
     ),
   );
@@ -135,7 +153,7 @@ function stanford_handbook_layouts_context_default_contexts() {
   t('Block(s) on the Handbook Subchapter node');
   t('Handbook');
   $export['handbook_subchapter'] = $context;
-  
+
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
