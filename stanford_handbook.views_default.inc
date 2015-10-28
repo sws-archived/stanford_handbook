@@ -35,6 +35,11 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_s_chapter_handbook_target_id']['id'] = 'field_s_chapter_handbook_target_id';
+  $handler->display->display_options['relationships']['field_s_chapter_handbook_target_id']['table'] = 'field_data_field_s_chapter_handbook';
+  $handler->display->display_options['relationships']['field_s_chapter_handbook_target_id']['field'] = 'field_s_chapter_handbook_target_id';
+  $handler->display->display_options['relationships']['field_s_chapter_handbook_target_id']['required'] = TRUE;
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_s_chapter_image']['id'] = 'field_s_chapter_image';
   $handler->display->display_options['fields']['field_s_chapter_image']['table'] = 'field_data_field_s_chapter_image';
@@ -126,6 +131,21 @@ function stanford_handbook_views_default_views() {
   $handler->display->display_options['sorts']['field_s_chapter_number_value']['id'] = 'field_s_chapter_number_value';
   $handler->display->display_options['sorts']['field_s_chapter_number_value']['table'] = 'field_data_field_s_chapter_number';
   $handler->display->display_options['sorts']['field_s_chapter_number_value']['field'] = 'field_s_chapter_number_value';
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_s_chapter_handbook_target_id';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
+    'stanford_handbook' => 'stanford_handbook',
+  );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
