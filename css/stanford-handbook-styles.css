@@ -1,0 +1,367 @@
+/* Theme Fixes Injector */
+
+.stanford-handbook #sidebar-first .block-menu,
+.stanford-handbook #sidebar-first .block-menu-block {
+  text-transform: uppercase;
+}
+
+.stanford-handbook #sidebar-first .block-menu h2,
+.stanford-handbook #sidebar-first .block-menu-block h2 {
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+  padding: 5px 0 15px;
+}
+
+.stanford-handbook #sidebar-first .block-menu ul.menu,
+.stanford-handbook #sidebar-first .block-menu-block ul.menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stanford-handbook #sidebar-first .block-menu ul.menu li,
+.stanford-handbook #sidebar-first .block-menu-block ul.menu li {
+  margin: 0;
+  list-style: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0;
+}
+
+.stanford-handbook #sidebar-first .block-menu ul.menu li a,
+.stanford-handbook #sidebar-first .block-menu-block ul.menu li a {
+  display: block;
+  border-top: 1px solid #e9e6df;
+  padding: 12px 0 12px 15px;
+  color: #736C51;
+}
+
+.stanford-handbook #sidebar-first .block-menu ul.menu:first-child > li.last,
+.stanford-handbook #sidebar-first .block-menu-block ul.menu:first-child > li.last {
+  border-bottom: 1px solid #e9e6df;
+}
+
+.stanford-handbook #sidebar-first .block-menu ul.menu li a:hover,
+.stanford-handbook #sidebar-first .block-menu ul.menu li a:focus,
+.stanford-handbook #sidebar-first .block-menu ul.menu a.active-trail,
+.stanford-handbook #sidebar-first .block-menu-block ul.menu li a:hover,
+.stanford-handbook #sidebar-first .block-menu-block ul.menu li a:focus,
+.stanford-handbook #sidebar-first .block-menu-block ul.menu a.active-trail {
+  background-color: #fff;
+  color: #2E2D29;
+}
+
+.stanford-handbook #sidebar-first .block-menu ul.menu li.active-trail ul,
+.stanford-handbook #sidebar-first .block-menu-block ul.menu li.active-trail ul {
+  background-color: #fff;
+}
+
+.stanford-handbook #sidebar-first .block-menu ul.menu li ul,
+.stanford-handbook #sidebar-first .block-menu-block ul.menu li ul {
+  padding: 0 0 0 15px;
+}
+
+.stanford-handbook #sidebar-first .block-menu ul.menu li ul li a,
+.stanford-handbook #sidebar-first .block-menu-block ul.menu li ul li a {
+  border: medium none;
+  font-weight: normal;
+  padding: 3px 15px;
+  text-transform: none;
+}
+
+.stanford-handbook #sidebar-first .block-menu ul.menu li ul li a:hover,
+.stanford-handbook #sidebar-first .block-menu ul.menu li ul li a:focus,
+.stanford-handbook #sidebar-first .block-menu ul.menu li ul li a.active-trail,
+.stanford-handbook #sidebar-first .block-menu-block ul.menu li ul li a:hover,
+.stanford-handbook #sidebar-first .block-menu-block ul.menu li ul li a:focus,
+.stanford-handbook #sidebar-first .block-menu-block ul.menu li ul li a.active-trail {
+  color: #2e2d29;
+}
+
+.stanford-handbook #sidebar-first .block-menu > h2 a,
+.stanford-handbook #sidebar-first .block-menu-block > h2 a {
+  color: #736C51;
+}
+
+.stanford-handbook #sidebar-first .block-menu > h2 a:hover,
+.stanford-handbook #sidebar-first .block-menu-block > h2 a:hover,
+.stanford-handbook #sidebar-first .block-menu > h2 a:focus,
+.stanford-handbook #sidebar-first .block-menu-block > h2 a:focus {
+  color: #2E2D29;
+}
+
+.stanford-handbook #sidebar-first .block-menu-block .content > .nav > li.expanded > ul,
+.stanford-handbook #sidebar-first .block-menu .content > .nav > li.expanded > ul {
+  padding-bottom: 1em;
+}
+
+/* Styles to move to Wilbur */
+.breadcrumb .breadcrumb {
+  margin:0px;
+  padding:0;
+  color: #595855;
+}
+/* this is a hack. See issue in OFW for nested breadcrumb style */
+/* Search results - moved to Wilbur */
+ol.search-results {
+  margin-left:0;
+  border-top: 1px solid #E5E5E5;
+  padding-top: 1em;
+}
+ol.search-results li {
+  border-bottom: 1px solid #E5E5E5;
+}
+
+/* Theme Fixes Injector END */
+
+/* Policy Node and Chapter Image Styles Injector */
+#sidebar-second #block-print-ui-print-links {
+  border: none;
+  box-shadow: none;
+  border-radius: 0px;
+  border-bottom: 1px solid #d5d2c5;
+  background: #f2f1eb;
+  padding: 10px 25px 20px 25px;
+}
+/* Share icons */
+#block-print-ui-print-links .print_html,
+#block-print-ui-print-links .print_mail,
+#block-print-ui-print-links .print_pdf {
+  margin-left:0;
+}
+#block-print-ui-print-links .print_html a,
+#block-print-ui-print-links .print_mail a,
+#block-print-ui-print-links .print_pdf a { 
+  background-image: url('../img/share-icon-print.png');
+  height: 32px;
+  background-position: left top;
+  background-repeat: no-repeat;
+  padding-left: 43px;
+  padding-top: 10px;
+  display: block;
+}
+#block-print-ui-print-links .print_html a:hover,
+#block-print-ui-print-links .print_mail a:hover,
+#block-print-ui-print-links .print_pdf a:hover {
+  text-decoration:underline;
+  opacity: .8;
+  color: black;
+}
+#block-print-ui-print-links .print_mail a {
+  background-image: url('../img/share-icon-email.png');
+}
+#block-print-ui-print-links .print_pdf a {
+  background-image: url('../img/share-icon-pdf.png');
+}
+#block-print-ui-print-links .print_mail a:after {
+  content: " this Policy";
+}
+#block-print-ui-print-links .print_pdf a:before {
+  content: "Download as ";
+}
+#block-print-ui-print-links .print_html a:after {
+  content: " this Policy";
+}
+.page-print-policies #block-print-ui-print-links .print_mail a:after {
+  content: " this Page";
+}
+.page-print-policies #block-print-ui-print-links .print_html a:after {
+  content: " this Page"; }
+.page-print-policies .breadcrumb {display:none;
+}
+
+/* Email this policy page */
+#print-mail-form #edit-fld-subject {
+  width:80%;
+}
+#print-mail-form #edit-fld-title {
+  font-size: 16px; font-weight: 600;
+}
+#print-mail-form input.form-submit {
+  margin-right:10px;
+}
+
+/* Previous Next */
+#block-custom-pagers-1 {
+  background-color: #F2F1EB;
+  border-top:1px solid #D5D2C5;
+  border-bottom:1px solid #D5D2C5;
+  padding:12px;
+}
+#block-custom-pagers-1 .previous a,
+#block-custom-pagers-1 .next a {
+  background-color: #FFFFFF;
+  border: 1px solid #D5D2C5;
+  border-radius: 20px 4px 4px 20px;
+  padding: 3px 10px;
+  display:inline-block;
+  width:70px;
+}
+#block-custom-pagers-1 .key {
+  display:none;
+}
+#block-custom-pagers-1 .next a {
+  border-radius: 4px 20px 20px 4px;
+}
+#block-custom-pagers-1 ul.custom-pager li.next {
+  float: right;
+}
+#block-custom-pagers-1 .previous a:hover,
+#block-custom-pagers-1 .next a:hover {
+  color:white;
+  background-color: #8c1515;
+}
+
+/* Policy nodes and chapter images */
+#block-views-chapter-image-block,
+.field-name-field-chapter-image {
+  float:right;
+}
+#block-views-chapter-image-block img,
+.field-name-field-chapter-image img {
+  margin-left:15px;
+  margin-bottom:10px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+.field-name-field-policy-former-number.clearfix:after {
+  clear: left;
+}
+.node-type-policy-document .field-type-text-with-summary {
+  margin-top:20px;
+}
+.field-name-field-policy-current-version {
+  display:inline-block;
+}
+.field-last-updated-on-prefix {
+  display:inline-block;
+  font-weight:600;
+}
+p.back-to-top {
+  margin-top: 10px;
+}
+#toc li {
+  list-style-type:none;
+  list-style-image: none;
+}
+
+/* fix for h2 first child */
+#content-body .content .node-policy-document h2:first-child,
+#content-body .content .node-policy-document h3:first-child,
+#content-body .content .node-policy-document h4:first-child {
+  margin-top:0.5em;
+}
+
+@media (min-width: 481px) and (max-width: 767px) { 
+  #block-views-chapter-image-block, .field-name-field-chapter-image {
+    width:auto;
+  }
+}
+@media (max-width: 480px) {
+#block-views-chapter-image-block,
+.field-name-field-chapter-image {
+  width:25%; margin-bottom: 0px;
+  margin-left:10px;
+}
+#block-views-chapter-image-block img,
+.field-name-field-chapter-image img {
+  margin-left:0px;
+}
+h1 {
+  font-size:28px;
+}
+}
+
+/* Policy Node and Chapter Image Styles Injector END */
+
+/* Chapter Subchapter Views Styles */
+
+/* Views rows */
+.view-stanford-handbook-pages.view-id-stanford_handbook_pages .views-row,
+.view-stanford-handbook-pages.view-id-stanford_handbook_pages .views-row-last,
+.view-policy-subchapter-listing.view-id-policy_subchapter_listing .views-row,
+.view-policy-subchapter-listing.view-id-policy_subchapter_listing .views-row-last,
+.view-id-policy_chapters.view-display-id-block_1 .views-row,
+.view-id-policy_chapters.view-display-id-block_1 .views-row-last,
+.view-stanford-handbook-pages.view-id-stanford_handbook_pages .views-row-first,
+.view-policy-subchapter-listing.view-id-policy_subchapter_listing .views-row-first,
+.view-id-policy_chapters.view-display-id-block_1 .views-row-first {
+   border-top: 1px solid #ddd;
+   padding-top: 12px;
+}
+.view-stanford-handbook-pages.view-id-stanford_handbook_pages .views-row-last,
+.view-policy-subchapter-listing.view-id-policy_subchapter_listing .views-row-last,
+.view-id-policy_chapters.view-display-id-block_1 .views-row-last {
+  border-bottom: 1px solid #ddd;
+}
+.view-stanford-handbook-pages.view-id-stanford_handbook_pages .views-row-last {
+  padding-bottom:12px;
+}
+
+/* Accordion styles */
+.stanford-handbook .accordion .view-stanford-handbook-pages.view-id-stanford_handbook_pages .views-row,
+.stanford-handbook .accordion .view-stanford-handbook-subchapters.view-id-stanford_handbook_subchapters .views-row {
+  border: none !important;
+  margin: 0;
+  padding: 0;
+}
+.stanford-handbook .accordion-group,
+.stanford-handbook .accordion-inner {
+  border:none;
+}
+.stanford-handbook .accordion-group {
+  margin-top: 10px;
+}
+.stanford-handbook .accordion .btn:before {
+  content: "Hide";
+}
+.stanford-handbook .accordion .btn.collapsed:before {
+  content: "View";
+}
+
+/* Chapter thumbnails */
+.view-stanford-handbook-chapters.view-id-stanford_handbook_chapters img {
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+/* Fix wrapping of subchapter and policy views */
+.node-type-stanford-subchapter #block-system-main.clearfix:after,
+.node-type-stanford-subchapter #block-system-main.clearfix:before,
+.node-type-stanford-subchapter .node.clearfix:before,
+.node-type-stanford-subchapter .node.clearfix:after,
+.view-stanford-handbook-pages.view-id-stanford_handbook_pages .views-row,
+.node-type-stanford-handbook-page #block-system-main.clearfix:after,
+.node-type-stanford-handbook-page #block-system-main.clearfix:before,
+.node-type-stanford-handbook-page .node.clearfix:before,
+.node-type-stanford-handbook-page .node.clearfix:after,
+.node-type-stanford-handbook-page .view-policy-subchapter-listing .views-row {
+  clear:none !important;
+}
+.node-type-stanford-subchapter #block-views-policy-documents-block-1,
+.node-type-stanford-handbook-page #block-views-c518dfaf84236a7bb956c27cc7327fc7 {
+  max-width: 670px;
+}
+
+@media (max-width: 1199px) {
+    .node-type-stanford-subchapter #block-views-policy-documents-block-1,
+    .node-type-stanford-handbook-page #block-views-c518dfaf84236a7bb956c27cc7327fc7 {
+    max-width: 510px;
+  }
+}
+@media (max-width: 979px) {
+  .node-type-stanford-subchapter #block-views-policy-documents-block-1,
+  .node-type-stanford-handbook-page #block-views-c518dfaf84236a7bb956c27cc7327fc7 {
+    max-width: 100%; z-index:-10;
+  }
+}
+@media (max-width: 767px) { 
+
+}
+
+/* Chapter Subchapter Views Styles END */

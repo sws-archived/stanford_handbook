@@ -216,12 +216,11 @@ function _stanford_handbook_insert_after_first_element(&$a, $element) {
  */
 function stanford_handbook_preprocess_node(&$vars, $hook) {
 	if($vars['type'] == 'stanford_handbook') {
-		$vars['section_view'] = views_embed_view('dor_policy_section_listing','block_1');
-		
+    //previous views logic moved to layouts submodule: stanford_handbook_layouts
 	}
 	if($vars['type'] == 'stanford_chapter') {
 		$vars['title'] = '1' . $vars['title'];
-		$vars['document_view'] = views_embed_view('dor_policy_document_listing','block_2');
+		//previous views logic moved to layouts submodule: stanford_handbook_layouts
 		drupal_add_library('system', 'ui.accordion');
 		drupal_add_js(drupal_get_path('module', 'stanford_handbook') . '/js/expand.js');
 	}

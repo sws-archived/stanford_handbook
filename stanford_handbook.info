@@ -26,6 +26,7 @@ dependencies[] = taxonomy
 dependencies[] = text
 dependencies[] = views
 dependencies[] = views_field_view
+stylesheets[all][] = css/stanford-handbook-styles.css
 stylesheets[print][] = css/stanford-handbook-print-styles.css
 features[ctools][] = ds:ds:1
 features[ctools][] = field_group:field_group:1
