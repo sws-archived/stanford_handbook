@@ -13,6 +13,7 @@ dependencies[] = strongarm
 features[context][] = handbook_chapter
 features[context][] = handbook_page
 features[context][] = handbook_subchapter
+features[context][] = sitewide_handbook
 features[ctools][] = context:context:3
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
