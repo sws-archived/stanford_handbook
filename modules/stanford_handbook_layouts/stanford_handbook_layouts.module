@@ -6,14 +6,37 @@
 
 include_once 'stanford_handbook_layouts.features.inc';
 
+function stanford_handbook_layouts_get_custom_pager_pid() {
+  $r = &drupal_static(__FUNCTION__);
+  if (!isset($r)) {
+    $q = db_select('custom_pager', 'cp');
+    $q->addField('cp', 'pid');
+    $q->condition('view', 'stanford_handbook_page_previous_next', '=');
+    $q->condition('position', 'block', '=');
+    $r = $q->execute()->fetchObject();
+    //Grabbing the pid of the custom pager record if set,
+    //otherwise assigning as first record.
+    $r = $r->pid;
+  }
+  return $r;
+}
+$r = stanford_handbook_layouts_get_custom_pager_pid();
+define('SH_CUSTOM_PAGER_PID', $r);
+
 /**
  * Implements hook_block_view_MODULE_DELTA_alter().
  * @param $data The data as returned from the hook_block_view() implementation of the module that defined the block.
  * @param $block The block object, as loaded from the database.
  */
-function stanford_handbook_layouts_block_view_custom_pagers_1_alter(&$data, $block) {
-  $data['subject'] = "<none>";
+//function stanford_handbook_layouts_block_view_custom_pagers_1_alter(&$data, $block) {
+//  $data['subject'] = "<none>";
+//}
+function stanford_handbook_layouts_block_view_alter(&$data, $block) {
+  if (SH_CUSTOM_PAGER_PID != NULL && $block->module == 'custom_pagers' && $block->delta == SH_CUSTOM_PAGER_PID) {
+    $data['subject'] = "<none>";
+  }
 }
+
 
 /**
  * Implements hook_block_view_MODULE_DELTA_alter().
