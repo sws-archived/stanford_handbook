@@ -11,26 +11,10 @@
 function stanford_handbook_install() {
   //Checking to make sure custom_pagers exists
   if (module_exists('custom_pagers')) {
-    $q = db_select('custom_pager', 'cp');
-    $q->addField('cp', 'pid');
-    $q->condition('view', 'stanford_handbook_page_previous_next', '=');
-    $q->condition('position', 'block', '=');
-    $r = $q->execute()->fetchObject();
-    //Grabbing the pid of the custom pager record if set,
-    //otherwise assigning as first record.
-    if (is_null($r->pid)) {
-      $r = 1;
-    }
-    else {
-      $r = $r->pid;
-    }
-
-    //Populate the default {custom_pager} record.
-    //Using db_merge in case the pager has already been set.
-    db_merge('custom_pager')
-      ->key(array(
-        'pid' => $r
-      ))
+    // Populate the {custom_pager} record.
+    // The key is the "pid" column, which is auto-incrementing.
+    // We're dynamically targeting that pid in the Context and in hiding the block title.
+    db_insert('custom_pager')
       ->fields(array(
         'title' => 'Handbook Pager',
         'list_php' => '',
@@ -42,5 +26,5 @@ function stanford_handbook_install() {
         'reverse_list' => 0,
       ))
       ->execute();
-  }
+    }
 }

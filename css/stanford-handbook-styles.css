@@ -187,14 +187,14 @@ ol.search-results li {
 }
 
 /* Previous Next */
-#block-custom-pagers-1 {
+.stanford-handbook-pager {
   background-color: #F2F1EB;
   border-top:1px solid #D5D2C5;
   border-bottom:1px solid #D5D2C5;
   padding:12px;
 }
-#block-custom-pagers-1 .previous a,
-#block-custom-pagers-1 .next a {
+.stanford-handbook-pager .previous a,
+.stanford-handbook-pager .next a {
   background-color: #FFFFFF;
   border: 1px solid #D5D2C5;
   border-radius: 20px 4px 4px 20px;
@@ -202,17 +202,17 @@ ol.search-results li {
   display:inline-block;
   width:70px;
 }
-#block-custom-pagers-1 .key {
+.stanford-handbook-pager .key {
   display:none;
 }
-#block-custom-pagers-1 .next a {
+.stanford-handbook-pager .next a {
   border-radius: 4px 20px 20px 4px;
 }
-#block-custom-pagers-1 ul.custom-pager li.next {
+.stanford-handbook-pager ul.custom-pager li.next {
   float: right;
 }
-#block-custom-pagers-1 .previous a:hover,
-#block-custom-pagers-1 .next a:hover {
+.stanford-handbook-pager .previous a:hover,
+.stanford-handbook-pager .next a:hover {
   color:white;
   background-color: #8c1515;
 }
