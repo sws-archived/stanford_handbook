@@ -18,29 +18,42 @@ function stanford_handbook_install() {
     $r = $q->execute()->fetchObject();
     //Grabbing the pid of the custom pager record if set,
     //otherwise assigning as first record.
-    if (is_null($r->pid)) {
-      $r = 1;
+    if (!is_null($r->pid)) {
+      $r = $r->pid;
+      //Populate the default {custom_pager} record.
+      //Using db_merge in case the pager has already been set.
+      db_merge('custom_pager')
+        ->key(array(
+          'pid' => $r
+        ))
+        ->fields(array(
+          'title' => 'Handbook Pager',
+          'list_php' => '',
+          'view' => 'stanford_handbook_page_previous_next',
+          'args' => '',
+          'position' => 'block',
+          'visibility_php' => '',
+          'node_type' => 'stanford_handbook_page',
+          'reverse_list' => 0,
+        ))
+        ->execute();
     }
     else {
-      $r = $r->pid;
+      //Populate the default {custom_pager} record.
+      //Using db_merge in case the pager has already been set.
+      db_insert('custom_pager')
+        ->fields(array(
+          'title' => 'Handbook Pager',
+          'list_php' => '',
+          'view' => 'stanford_handbook_page_previous_next',
+          'args' => '',
+          'position' => 'block',
+          'visibility_php' => '',
+          'node_type' => 'stanford_handbook_page',
+          'reverse_list' => 0,
+        ))
+        ->execute();
     }
 
-    //Populate the default {custom_pager} record.
-    //Using db_merge in case the pager has already been set.
-    db_merge('custom_pager')
-      ->key(array(
-        'pid' => $r
-      ))
-      ->fields(array(
-        'title' => 'Handbook Pager',
-        'list_php' => '',
-        'view' => 'stanford_handbook_page_previous_next',
-        'args' => '',
-        'position' => 'block',
-        'visibility_php' => '',
-        'node_type' => 'stanford_handbook_page',
-        'reverse_list' => 0,
-      ))
-      ->execute();
   }
 }
