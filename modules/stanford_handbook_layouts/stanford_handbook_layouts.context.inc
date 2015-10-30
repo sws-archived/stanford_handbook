@@ -103,7 +103,7 @@ function stanford_handbook_layouts_context_default_contexts() {
       'blocks' => array(
         'custom_pagers-1' => array(
           'module' => 'custom_pagers',
-          'delta' => '1',
+          'delta' => SH_CUSTOM_PAGER_PID,
           'region' => 'highlighted',
           'weight' => '-10',
         ),
