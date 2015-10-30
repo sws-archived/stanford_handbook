@@ -14,8 +14,8 @@ function stanford_handbook_layouts_get_custom_pager_pid() {
     $q->condition('view', 'stanford_handbook_page_previous_next', '=');
     $q->condition('position', 'block', '=');
     $r = $q->execute()->fetchObject();
-    //Grabbing the pid of the custom pager record if set,
-    //otherwise assigning as first record.
+    //Grabbing the pid of the custom pager record.
+    //This will always be set as it is assigned on install.
     $r = $r->pid;
   }
   return $r;
