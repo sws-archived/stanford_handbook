@@ -3,6 +3,9 @@ Stanford Handbook
 
 Robust, generalized Drupal Features module for creating policy handbooks
 
+##Installation
+Install this module like any other module. Note that Custom Pagers contrib module is included in this installation. [See Drupal Project](https://www.drupal.org/project/custom_pagers)
+
 ## Post-Install Manual Configuration
 There are a few manual configuration steps to do upon installing this module:
 
