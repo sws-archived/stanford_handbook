@@ -89,8 +89,10 @@
 	<?php print render($title_suffix); ?>
 	
 	<div class="content" <?php print $content_attributes; ?>>
-	<div class="field-last-updated-on-prefix">Last updated on:</div>
-    <?php print render($content['field_hbp_current_version']); ?>
+	<?php if ($content['field_hbp_current_version']): ?>
+	    <div class="field-last-updated-on-prefix">Last updated on:</div>
+	    <?php print render($content['field_hbp_current_version']); ?>
+	<?php endif; ?>
 	<?php print render($content['field_hbp_former_number']); ?>
 
 	<?php print render($content['body']); ?>
